@@ -33,6 +33,7 @@ local servers = {
 	{ name = "typos_lsp", settings = {} },
 }
 
+require("java").setup()
 for _, lsp in pairs(servers) do
 	lspconfig[lsp.name].setup({
 		on_attach = function(client, bufnr)
