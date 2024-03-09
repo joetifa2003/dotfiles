@@ -1,4 +1,3 @@
----@type ChadrcConfig
 local M = {}
 
 M.ui = {
@@ -8,17 +7,19 @@ M.ui = {
 	nvdash = {
 		load_on_startup = true,
 	},
+
 	statusline = {
 		theme = "vscode_colored",
-		overriden_modules = function(modules)
-			table.insert(
-				modules,
-				6,
-				(function()
-					return "%#StText# " .. vim.api.nvim_buf_get_name(0)
-				end)()
-			)
-		end,
+		order = { "mode", "file", "diagnostics", "git", "path", "%=", "lsp_msg", "%=", "lsp", "cursor", "cwd" },
+		modules = {
+			path = function()
+				return "%#StText# " .. vim.api.nvim_buf_get_name(0)
+			end,
+		},
+	},
+
+	tabufline = {
+		order = { "buffers", "tabs", "btns", "treeOffset" },
 	},
 
 	hl_override = {
@@ -36,11 +37,11 @@ M.ui = {
 		},
 	},
 
-	extended_integrations = { "dap" },
 	transparency = true,
 }
 
-M.plugins = "custom.plugins"
-M.mappings = require("custom.mappings")
+M.base46 = {
+	extended_integrations = { "dap" },
+}
 
 return M
