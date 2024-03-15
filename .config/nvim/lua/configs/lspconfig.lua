@@ -6,6 +6,9 @@ local lspconfig = require("lspconfig")
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
+	{ name = "pyright", settings = {} },
+	{ name = "zls", settings = {} },
+	{ name = "rust_analyzer", settings = {} },
 	{ name = "bashls", settings = {} },
 	{ name = "tsserver", settings = {} },
 	{ name = "eslint", settings = {} },
