@@ -3,6 +3,7 @@ local M = {}
 M.ui = {
 	theme = "aquarium",
 	lsp_semantic_tokens = false,
+	transparency = true,
 
 	nvdash = {
 		load_on_startup = true,
@@ -10,10 +11,20 @@ M.ui = {
 
 	statusline = {
 		theme = "vscode_colored",
-		order = { "mode", "file", "diagnostics", "git", "path", "%=", "lsp_msg", "%=", "lsp", "cursor", "cwd" },
+		order = { "mode", "path", "%=", "lsp_msg", "%=", "diagnostics", "git", "lsp", "cwd" },
 		modules = {
 			path = function()
-				return "%#StText# " .. vim.api.nvim_buf_get_name(0)
+				local path = vim.fn.expand("%:.")
+				if path == "" then
+					return "%#StText# "
+				end
+
+				local icon = require("nvim-web-devicons").get_icon(path)
+				if icon then
+					path = icon .. " " .. path
+				end
+
+				return "%#StText# " .. path
 			end,
 		},
 	},
@@ -36,8 +47,6 @@ M.ui = {
 			bg = "#e8cca7",
 		},
 	},
-
-	transparency = true,
 }
 
 M.base46 = {
