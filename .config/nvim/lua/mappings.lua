@@ -63,3 +63,7 @@ map("n", "<leader>a", require("grapple").tag)
 map("n", "<leader>h", require("grapple").toggle_tags)
 map("n", "]]", require("grapple").cycle_forward)
 map("n", "]]", require("grapple").cycle_backward)
+
+map("n", "<leader>lh", function()
+	vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled(0))
+end, { desc = "Toggle inlay hints" })
