@@ -4,10 +4,6 @@ require("nvchad.mappings")
 
 local map = vim.keymap.set
 
-map("n", "<leader>fm", function()
-	require("conform").format()
-end, { desc = "File Format with conform" })
-
 map("n", "]b", function()
 	require("nvchad.tabufline").next()
 end, { desc = "Goto next buffer" })
@@ -18,33 +14,11 @@ end, { desc = "Goto prev buffer" })
 
 map("n", "<leader>e", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle file tree" })
 
-map("n", "<leader>la", vim.lsp.buf.code_action, { desc = "Code actions" })
-map("n", "<leader>ld", vim.diagnostic.open_float, { desc = "Open diagnostics under cursor" })
-
 map("n", "<F5>", require("dap").continue)
 map("n", "<F9>", require("dap").toggle_breakpoint)
 map("n", "<F10>", require("dap").step_over)
 map("n", "<F11>", require("dap").step_into)
 map("n", "<F12>", require("dap").step_out)
-
-map("n", "<leader>ls", function()
-	require("telescope.builtin").lsp_document_symbols({})
-end)
-map("n", "<leader>lws", function()
-	require("telescope.builtin").lsp_document_symbols({})
-end)
-map("n", "<leader>lD", function()
-	require("telescope.builtin").diagnostics({})
-end)
-map("n", "<leader>lcd", function()
-	require("telescope.builtin").diagnostics({ bufnr = 0 })
-end)
-map("n", "gr", function()
-	require("telescope.builtin").lsp_references({})
-end)
-map("n", "gi", function()
-	require("telescope.builtin").lsp_implementations({})
-end)
 
 map("n", "<leader>gg", function()
 	vim.cmd("LazyGit")
@@ -63,9 +37,5 @@ map("n", "<leader>a", require("grapple").tag)
 map("n", "<leader>h", require("grapple").toggle_tags)
 map("n", "]]", require("grapple").cycle_forward)
 map("n", "]]", require("grapple").cycle_backward)
-
-map("n", "<leader>lh", function()
-	vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled(0))
-end, { desc = "Toggle inlay hints" })
 
 map("n", "-", require("oil").open, { desc = "Open oil" })

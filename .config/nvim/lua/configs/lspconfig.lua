@@ -42,6 +42,7 @@ for _, lsp in pairs(servers) do
 	lspconfig[lsp.name].setup({
 		on_attach = function(client, bufnr)
 			on_attach(client, bufnr)
+			require("mappings-lsp")(bufnr)
 		end,
 		capabilities = capabilities,
 		settings = lsp.settings,
