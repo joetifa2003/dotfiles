@@ -38,8 +38,8 @@ vim.schedule(function()
 	require("mappings")
 end)
 
-vim.api.nvim_create_autocmd("LspAttach", {
-	callback = function(args)
-		vim.lsp.inlay_hint.enable(0, true)
-	end,
-})
+-- vim.api.nvim_create_autocmd("LspAttach", {
+-- 	callback = function(args)
+-- 		vim.lsp.inlay_hint.enable(0, true)
+-- 	end,
+-- })

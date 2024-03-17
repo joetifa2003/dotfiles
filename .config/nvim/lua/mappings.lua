@@ -67,3 +67,5 @@ map("n", "]]", require("grapple").cycle_backward)
 map("n", "<leader>lh", function()
 	vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled(0))
 end, { desc = "Toggle inlay hints" })
+
+map("n", "-", require("oil").open, { desc = "Open oil" })
