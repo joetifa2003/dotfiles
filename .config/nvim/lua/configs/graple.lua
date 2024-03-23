@@ -1,6 +1,6 @@
 return {
-  win_opts = {
-    width = 80,
-    height = 20,
-  },
+	win_opts = {
+		width = 80,
+		height = 20,
+	},
 }

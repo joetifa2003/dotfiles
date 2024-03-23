@@ -36,6 +36,8 @@ map("n", "<C-j>", require("smart-splits").move_cursor_down)
 map("n", "<leader>a", require("grapple").tag)
 map("n", "<leader>h", require("grapple").toggle_tags)
 map("n", "]]", require("grapple").cycle_forward)
-map("n", "]]", require("grapple").cycle_backward)
+map("n", "[[", require("grapple").cycle_backward)
 
 map("n", "-", require("oil").open, { desc = "Open oil" })
+
+map("n", "<leader>X", require("nvchad.tabufline").closeAllBufs)

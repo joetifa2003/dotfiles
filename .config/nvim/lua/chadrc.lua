@@ -11,7 +11,7 @@ M.ui = {
 
 	statusline = {
 		theme = "vscode_colored",
-		order = { "mode", "path", "%=", "lsp_msg", "%=", "diagnostics", "git", "lsp", "cwd" },
+		order = { "mode", "path", "grapple", "%=", "lsp_msg", "%=", "diagnostics", "git", "lsp", "cwd" },
 		modules = {
 			path = function()
 				local path = vim.fn.expand("%:.")
@@ -25,6 +25,17 @@ M.ui = {
 				end
 
 				return "%#StText# " .. path
+			end,
+
+			grapple = function()
+				return " "
+					.. (
+						require("grapple").statusline({
+							icon = "G",
+							active = "|%s|",
+							inactive = " %s ",
+						}) or ""
+					)
 			end,
 		},
 	},
