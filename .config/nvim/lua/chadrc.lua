@@ -28,14 +28,8 @@ M.ui = {
 			end,
 
 			grapple = function()
-				return " "
-					.. (
-						require("grapple").statusline({
-							icon = "G",
-							active = "|%s|",
-							inactive = " %s ",
-						}) or ""
-					)
+				return " " .. (require("grapple").statusline(
+) or "")
 			end,
 		},
 	},

@@ -58,10 +58,10 @@ return {
 	},
 	{
 		"nvim-orgmode/orgmode",
+		lazy = false,
 		dependencies = {
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
-		lazy = false,
 		config = require("configs.orgmode"),
 	},
 	{ "akinsho/org-bullets.nvim", lazy = false },
@@ -184,4 +184,5 @@ return {
 		-- Optional dependencies
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
+	{ "nvim-neotest/nvim-nio", lazy = false },
 }
