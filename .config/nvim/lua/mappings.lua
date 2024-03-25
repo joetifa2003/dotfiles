@@ -41,3 +41,16 @@ map("n", "[[", require("grapple").cycle_backward)
 map("n", "-", require("oil").open, { desc = "Open oil" })
 
 map("n", "<leader>X", require("nvchad.tabufline").closeAllBufs)
+
+local builtin = require("telescope.builtin")
+map("n", "<leader>fof", function()
+	builtin.find_files({
+		cwd = "~/orgfiles",
+	})
+end, { desc = "Telescope find orgfiles" })
+
+map("n", "<leader>fow", function()
+	builtin.live_grep({
+		cwd = "~/orgfiles",
+	})
+end, { desc = "Telescope grep orgfiles" })
