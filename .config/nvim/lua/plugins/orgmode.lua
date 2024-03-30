@@ -44,7 +44,12 @@ return {
 		lazy = false,
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		opts = {
+			markdown = {
+				bullets = { "◉", "○", "✸", "✿" },
+				fat_headlines = false,
+			},
 			org = {
+				fat_headlines = false,
 				headline_highlights = { "Headline" },
 			},
 		},
