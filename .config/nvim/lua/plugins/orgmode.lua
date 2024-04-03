@@ -6,8 +6,6 @@ return {
 		},
 		event = "VeryLazy",
 		config = function()
-			require("orgmode").setup_ts_grammar()
-
 			local meetingNotesTarget = "~/orgfiles/meeting-notes/Week %<%V>.org"
 
 			require("orgmode").setup({

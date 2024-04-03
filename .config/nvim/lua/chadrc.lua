@@ -9,6 +9,12 @@ M.ui = {
 		load_on_startup = true,
 	},
 
+	cmp = {
+		icons = true,
+		lspkind_text = true,
+		style = "atom", -- default/flat_light/flat_dark/atom/atom_colored
+	},
+
 	statusline = {
 		theme = "vscode_colored",
 		order = { "mode", "path", "grapple", "%=", "lsp_msg", "%=", "diagnostics", "git", "lsp", "cwd" },
@@ -28,8 +34,7 @@ M.ui = {
 			end,
 
 			grapple = function()
-				return " " .. (require("grapple").statusline(
-) or "")
+				return " " .. (require("grapple").statusline() or "")
 			end,
 		},
 	},
