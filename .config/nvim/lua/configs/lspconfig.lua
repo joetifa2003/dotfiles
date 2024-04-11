@@ -7,6 +7,7 @@ local lspconfig = require("lspconfig")
 -- if you just want default config for the servers then put them in a table
 local servers = {
 	{ name = "marksman", settings = {} },
+	{ name = "templ", settings = {} },
 	{ name = "tailwindcss", settings = {} },
 	{ name = "pyright", settings = {} },
 	{ name = "zls", settings = {} },

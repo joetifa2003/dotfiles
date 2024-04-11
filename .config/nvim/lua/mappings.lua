@@ -54,3 +54,11 @@ map("n", "<leader>fow", function()
 		cwd = "~/orgfiles",
 	})
 end, { desc = "Telescope grep orgfiles" })
+
+map("n", "<leader>flf", function()
+	builtin.find_files({ cwd = vim.fn.expand("%:h") })
+end, { desc = "Telescope find local files" })
+
+map("n", "<leader>flw", function()
+	builtin.live_grep({ cwd = vim.fn.expand("%:h") })
+end, { desc = "Telescope grep local files" })

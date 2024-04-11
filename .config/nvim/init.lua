@@ -38,6 +38,12 @@ vim.schedule(function()
 	require("mappings")
 end)
 
+vim.filetype.add({
+	extension = {
+		templ = "templ",
+	},
+})
+
 -- vim.api.nvim_create_autocmd("LspAttach", {
 -- 	callback = function(args)
 -- 		vim.lsp.inlay_hint.enable(0, true)

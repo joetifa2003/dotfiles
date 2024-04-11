@@ -12,6 +12,7 @@ return {
 		config = function()
 			local options = {
 				formatters_by_ft = {
+					templ = { "templ" },
 					lua = { "stylua" },
 					javascript = { { "prettierd", "prettier" } },
 					typescript = { { "prettierd", "prettier" } },
