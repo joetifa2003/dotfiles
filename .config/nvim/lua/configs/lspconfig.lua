@@ -6,6 +6,7 @@ local lspconfig = require("lspconfig")
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
+	{ name = "svelte", settings = {} },
 	{ name = "marksman", settings = {} },
 	{ name = "templ", settings = {} },
 	{ name = "tailwindcss", settings = {} },
@@ -41,6 +42,12 @@ local servers = {
 
 require("java").setup()
 for _, lsp in pairs(servers) do
+	local opts = {}
+
+	if lsp.name == "tailwindcss" then
+		opts.root_dir = lspconfig.util.root_pattern("tailwind.config.js", ".git", "assets")
+	end
+
 	lspconfig[lsp.name].setup({
 		on_attach = function(client, bufnr)
 			on_attach(client, bufnr)
@@ -48,5 +55,6 @@ for _, lsp in pairs(servers) do
 		end,
 		capabilities = capabilities,
 		settings = lsp.settings,
+		opts = opts,
 	})
 end

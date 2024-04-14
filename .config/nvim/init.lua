@@ -1,3 +1,4 @@
+vim.opt.termguicolors = true
 vim.g.base46_cache = vim.fn.stdpath("data") .. "/nvchad/base46/"
 vim.g.mapleader = " "
 
@@ -42,6 +43,14 @@ vim.filetype.add({
 	extension = {
 		templ = "templ",
 	},
+})
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
 -- vim.api.nvim_create_autocmd("LspAttach", {
