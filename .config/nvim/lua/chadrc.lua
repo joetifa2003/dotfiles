@@ -40,7 +40,8 @@ M.ui = {
 	},
 
 	tabufline = {
-		order = { "buffers", "tabs", "btns", "treeOffset" },
+		-- order = { "buffers", "tabs", "btns", "treeOffset" },
+		order = { "buffers", "tabs", "btns" },
 	},
 
 	hl_override = {
