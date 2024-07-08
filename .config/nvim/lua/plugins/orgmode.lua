@@ -33,6 +33,11 @@ return {
 						template = "\n* TODO %^{header} :progress:\n  CREATED: %T\n\t%a\n\n\t%?\n",
 						target = meetingNotesTarget,
 					},
+					mq = {
+						description = "question",
+						template = "\n* TODO %^{header} :question:\n  CREATED: %T\n\t%a\n\n\t%?\n",
+						target = meetingNotesTarget,
+					},
 				},
 			})
 		end,
