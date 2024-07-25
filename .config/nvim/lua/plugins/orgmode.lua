@@ -48,13 +48,26 @@ return {
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		opts = {
 			markdown = {
-				bullets = { "◉", "○", "✸", "✿" },
-				fat_headlines = false,
+				headline_highlights = false,
+				-- bullets = { "◉", "○", "✸", "✿" },
+				-- fat_headlines = false,
 			},
 			org = {
 				fat_headlines = false,
 				headline_highlights = { "Headline" },
 			},
+		},
+	},
+	{
+		"OXY2DEV/markview.nvim",
+		lazy = false,
+
+		dependencies = {
+			-- You may not need this if you don't lazy load
+			-- Or if the parsers are in your $RUNTIMEPATH
+			"nvim-treesitter/nvim-treesitter",
+
+			"nvim-tree/nvim-web-devicons",
 		},
 	},
 }
