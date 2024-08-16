@@ -1,1 +1,7 @@
-return { "folke/neodev.nvim", opts = {}, lazy = false }
+return {
+	"folke/lazydev.nvim",
+	ft = "lua", -- only load on lua files
+	opts = {
+		library = {},
+	},
+}

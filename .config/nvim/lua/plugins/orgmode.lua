@@ -1,11 +1,11 @@
 return {
 	{
 		"nvim-orgmode/orgmode",
+		event = "VeryLazy",
+		ft = { "org" },
 		dependencies = {
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
-		-- event = "VeryLazy",
-		lazy = false,
 		config = function()
 			local meetingNotesTarget = "~/orgfiles/meeting-notes/Week %<%V>.org"
 
@@ -45,13 +45,12 @@ return {
 	},
 	{
 		"lukas-reineke/headlines.nvim",
-		lazy = false,
+		event = "VeryLazy",
+		ft = { "org", "markdown" },
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		opts = {
 			markdown = {
-				headline_highlights = false,
 				bullets = { "◉", "○", "✸", "✿" },
-				-- fat_headlines = false,
 			},
 			org = {
 				fat_headlines = false,
