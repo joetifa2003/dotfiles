@@ -1,6 +1,5 @@
 local configs = require("nvchad.configs.lspconfig")
 local on_attach = configs.on_attach
-local capabilities = configs.capabilities
 
 local lspconfig = require("lspconfig")
 
@@ -45,6 +44,17 @@ for _, lsp in pairs(servers) do
 
 	if lsp.name == "tailwindcss" then
 		opts.root_dir = lspconfig.util.root_pattern("tailwind.config.js", ".git", "assets")
+	end
+
+	local capabilities = configs.capabilities
+	if lsp.name == "svelte" then
+		capabilities = vim.tbl_deep_extend("force", configs.capabilities, {
+			workspace = {
+				didChangeWatchedFiles = {
+					enable = false,
+				},
+			},
+		})
 	end
 
 	lspconfig[lsp.name].setup({

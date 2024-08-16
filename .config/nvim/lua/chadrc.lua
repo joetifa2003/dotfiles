@@ -1,7 +1,7 @@
 local M = {}
 
 M.ui = {
-	theme = "aquarium",
+	theme = "sweetpastel",
 	lsp_semantic_tokens = false,
 	transparency = true,
 
@@ -30,6 +30,10 @@ M.ui = {
 					path = icon .. " " .. path
 				end
 
+				if vim.bo[vim.api.nvim_get_current_buf()].modified then
+					path = path .. " \u{f111} "
+				end
+
 				return "%#StText# " .. path
 			end,
 
@@ -42,6 +46,7 @@ M.ui = {
 	tabufline = {
 		-- order = { "buffers", "tabs", "btns", "treeOffset" },
 		order = { "buffers", "tabs", "btns" },
+		enabled = false,
 	},
 
 	hl_override = {

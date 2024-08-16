@@ -5,11 +5,11 @@ require("nvchad.mappings")
 local map = vim.keymap.set
 
 map("n", "]b", function()
-	require("nvchad.tabufline").next()
+	vim.cmd("bnext")
 end, { desc = "Goto next buffer" })
 
 map("n", "[b", function()
-	require("nvchad.tabufline").prev()
+	vim.cmd("bprevious")
 end, { desc = "Goto prev buffer" })
 
 map("n", "<leader>e", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle file tree" })
@@ -40,7 +40,13 @@ map("n", "[[", require("grapple").cycle_backward)
 
 map("n", "-", require("oil").open, { desc = "Open oil" })
 
-map("n", "<leader>X", require("nvchad.tabufline").closeAllBufs)
+map("n", "<leader>X", function()
+	vim.cmd("%bd|e#")
+end)
+
+map("n", "<leader>x", function()
+	vim.cmd("bd")
+end)
 
 local builtin = require("telescope.builtin")
 map("n", "<leader>fof", function()

@@ -2,9 +2,10 @@ return {
 	{
 		"nvim-orgmode/orgmode",
 		dependencies = {
-			{ "nvim-treesitter/nvim-treesitter", lazy = true },
+			{ "nvim-treesitter/nvim-treesitter" },
 		},
-		event = "VeryLazy",
+		-- event = "VeryLazy",
+		lazy = false,
 		config = function()
 			local meetingNotesTarget = "~/orgfiles/meeting-notes/Week %<%V>.org"
 
@@ -49,25 +50,13 @@ return {
 		opts = {
 			markdown = {
 				headline_highlights = false,
-				-- bullets = { "◉", "○", "✸", "✿" },
+				bullets = { "◉", "○", "✸", "✿" },
 				-- fat_headlines = false,
 			},
 			org = {
 				fat_headlines = false,
 				headline_highlights = { "Headline" },
 			},
-		},
-	},
-	{
-		"OXY2DEV/markview.nvim",
-		lazy = false,
-
-		dependencies = {
-			-- You may not need this if you don't lazy load
-			-- Or if the parsers are in your $RUNTIMEPATH
-			"nvim-treesitter/nvim-treesitter",
-
-			"nvim-tree/nvim-web-devicons",
 		},
 	},
 }
