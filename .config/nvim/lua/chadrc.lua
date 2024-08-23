@@ -1,7 +1,7 @@
 local M = {}
 
 M.ui = {
-	theme = "sweetpastel",
+	theme = "aquarium",
 	lsp_semantic_tokens = false,
 	transparency = true,
 

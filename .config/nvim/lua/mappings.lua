@@ -67,16 +67,16 @@ map("n", "<leader>flw", function()
 	builtin.live_grep({ cwd = vim.fn.expand("%:h") })
 end, { desc = "Telescope grep local files" })
 
-map("v", "<leader>ay", ":<C-u>'<,'>GpChatPaste<cr>", { desc = "Yank text to chat" })
+map("v", "<leader>ay", ":<C-u>'<,'>GpChatPaste vsplit<cr>", { desc = "Yank text to chat", noremap = true })
 
 map("n", "<leader>an", function()
 	vim.cmd("GpChatNew vsplit")
-end, { desc = "Open ai chat" })
+end, { desc = "Open ai chat", noremap = true })
 
 map("n", "<leader>at", function()
 	vim.cmd("GpChatToggle")
-end, { desc = "Toggle ai chat" })
+end, { desc = "Toggle ai chat", noremap = true })
 
 map("n", "<leader>af", function()
 	vim.cmd("GpChatFinder")
-end, { desc = "Find ai chats" })
+end, { desc = "Find ai chats", noremap = true })
