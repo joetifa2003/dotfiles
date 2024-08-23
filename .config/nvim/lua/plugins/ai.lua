@@ -1,32 +1,44 @@
 return {
 	{
-		"David-Kunz/gen.nvim",
+		"robitx/gp.nvim",
 		lazy = false,
-		opts = {
-			model = "mistral-nemo-custom", -- The default model to use.
-			quit_map = "q", -- set keymap for close the response window
-			retry_map = "<c-r>", -- set keymap to re-send the current prompt
-			accept_map = "<c-cr>", -- set keymap to replace the previous selection with the last result
-			host = "localhost", -- The host running the Ollama service.
-			port = "11434", -- The port on which the Ollama service is listening.
-			display_mode = "split", -- The display mode. Can be "float" or "split" or "horizontal-split".
-			show_prompt = true, -- Shows the prompt submitted to Ollama.
-			show_model = true, -- Displays which model you are using at the beginning of your chat session.
-			no_auto_close = true, -- Never closes the window automatically.
-			hidden = false, -- Hide the generation window (if true, will implicitly set `prompt.replace = true`)
-			-- The command for the Ollama service. You can use placeholders $prompt, $model and $body (shellescaped).
-			-- This can also be a command string.
-			-- The executed command must return a JSON object with { response, context }
-			-- (context property is optional).
-			-- list_models = '<omitted lua function>', -- Retrieves a list of model names
-			debug = false, -- Prints errors and the command which is run.
-		},
-		config = function(_, opts)
-			require("gen").setup(opts)
+		config = function()
+			require("gp").setup({
+				providers = {
+					openai = {
+						endpoint = "https://api.deepseek.com/v1/chat/completions",
+						secret = os.getenv("DEEPSEEK_API_KEY"),
+					},
+				},
+				agents = {
+					{
+						name = "ChatGPT3-5",
+						disable = true,
+					},
+					{
+						name = "ChatGPT4o",
+						disable = true,
+					},
+					{
+						name = "deepseek-coder",
+						provider = "openai",
+						chat = true,
+						command = true,
+						model = { model = "deepseek-coder" },
+						system_prompt = "You are a helpful assistant.",
+					},
+				},
 
-			require("gen").prompts["Summarize Code"] = {
-				prompt = "Summarize the following code and explain it in detail:\n```$filetype\n$text\n```",
-			}
+				default_command_agent = "deepseek-coder",
+				default_chat_agent = "deepseek-coder",
+
+				chat_confirm_delete = false,
+
+				chat_shortcut_respond = { modes = { "n", "v", "x" }, shortcut = "<leader>ar" },
+				chat_shortcut_delete = { modes = { "n", "v", "x" }, shortcut = "<leader>ad" },
+				chat_shortcut_stop = { modes = { "n", "v", "x" }, shortcut = "<leader>as" },
+				chat_shortcut_new = { modes = { "n", "v", "x" }, shortcut = "<leader>an" },
+			})
 		end,
 	},
 }
