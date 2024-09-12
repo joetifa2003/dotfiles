@@ -13,7 +13,23 @@ local servers = {
 	{ name = "zls", settings = {} },
 	{ name = "rust_analyzer", settings = {} },
 	{ name = "bashls", settings = {} },
-	{ name = "tsserver", settings = {} },
+	{
+		name = "ts_ls",
+		settings = {
+			typescript = {
+				inlayHints = {
+					includeInlayParameterNameHints = "all",
+					includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+					includeInlayFunctionParameterTypeHints = true,
+					includeInlayVariableTypeHints = true,
+					includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+					includeInlayPropertyDeclarationTypeHints = true,
+					includeInlayFunctionLikeReturnTypeHints = true,
+					includeInlayEnumMemberValueHints = true,
+				},
+			},
+		},
+	},
 	{ name = "eslint", settings = {} },
 	{ name = "jdtls", settings = {} },
 	{

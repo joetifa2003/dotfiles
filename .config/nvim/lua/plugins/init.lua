@@ -6,7 +6,6 @@ return {
 	{ "mfussenegger/nvim-dap", lazy = false },
 	{ "mrjones2014/smart-splits.nvim", lazy = false },
 	{ "nvim-neotest/nvim-nio", lazy = false },
-
 	{
 		"kdheepak/lazygit.nvim",
 		lazy = false,
