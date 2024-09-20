@@ -36,8 +36,6 @@ map("n", "<leader>h", require("grapple").toggle_tags)
 map("n", "]]", require("grapple").cycle_forward)
 map("n", "[[", require("grapple").cycle_backward)
 
-map("n", "-", require("oil").open, { desc = "Open oil" })
-
 map("n", "<leader>X", function()
 	vim.cmd("%bd|e#")
 end)

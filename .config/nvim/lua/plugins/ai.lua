@@ -38,7 +38,7 @@ return {
 						provider = "openai",
 						chat = true,
 						command = true,
-						model = { model = "deepseek-coder" },
+						model = { model = "deepseek-coder", temperature = 0 },
 						system_prompt = "You are a helpful assistant.",
 					},
 				},

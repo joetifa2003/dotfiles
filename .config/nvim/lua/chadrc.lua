@@ -1,7 +1,7 @@
 local M = {}
 
 M.ui = {
-	theme = "aquarium",
+	theme = "mountain",
 	lsp_semantic_tokens = false,
 	transparency = true,
 
@@ -50,23 +50,22 @@ M.ui = {
 	},
 
 	hl_override = {
-		["@parameter"] = {
-			fg = "white",
-		},
-		["@punctuation.bracket"] = {
-			fg = "#e8cca7",
-		},
-		["Repeat"] = {
-			fg = "purple",
-		},
 		["Search"] = {
 			bg = "#e8cca7",
 		},
+		TelescopeSelection = { bg = "#6f6250" },
 	},
 }
 
 M.base46 = {
 	extended_integrations = { "dap" },
+	changed_themes = {
+		["mountain"] = {
+			base_16 = {
+				base02 = "#343434",
+			},
+		},
+	},
 }
 
 return M
