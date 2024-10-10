@@ -1,14 +1,14 @@
 local M = {}
 
+M.lsp = {
+	signature = true,
+}
+
+M.nvdash = {
+	load_on_startup = true,
+}
+
 M.ui = {
-	theme = "mountain",
-	lsp_semantic_tokens = false,
-	transparency = true,
-
-	nvdash = {
-		load_on_startup = true,
-	},
-
 	cmp = {
 		icons = true,
 		lspkind_text = true,
@@ -48,16 +48,11 @@ M.ui = {
 		order = { "buffers", "tabs", "btns" },
 		enabled = false,
 	},
-
-	hl_override = {
-		["Search"] = {
-			bg = "#e8cca7",
-		},
-		TelescopeSelection = { bg = "#6f6250" },
-	},
 }
 
 M.base46 = {
+	theme = "mountain",
+	transparency = true,
 	extended_integrations = { "dap" },
 	changed_themes = {
 		["mountain"] = {
@@ -65,6 +60,12 @@ M.base46 = {
 				base02 = "#343434",
 			},
 		},
+	},
+	hl_override = {
+		["Search"] = {
+			bg = "#e8cca7",
+		},
+		TelescopeSelection = { bg = "#6f6250" },
 	},
 }
 
