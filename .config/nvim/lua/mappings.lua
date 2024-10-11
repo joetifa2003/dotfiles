@@ -85,3 +85,15 @@ map("n", "<leader>cp", function()
 	local relative_path = vim.fn.fnamemodify(full_path, ":." .. cwd .. ":.")
 	vim.fn.setreg("+", relative_path)
 end, { noremap = true, silent = true })
+
+map("n", "<leader>gp", function()
+	vim.cmd("Gitsigns preview_hunk")
+end, { desc = "Preview hunk" })
+
+map("n", "<leader>gb", function()
+	vim.cmd("Gitsigns blame_line")
+end, { desc = "Blame line" })
+
+map("n", "<leader>gB", function()
+	vim.cmd("Gitsigns blame")
+end, { desc = "Blame line" })

@@ -31,7 +31,15 @@ local servers = {
 			},
 		},
 	},
-	{ name = "eslint", settings = {} },
+	{
+		name = "eslint",
+		-- settings = {
+		-- 	validate = {
+		-- 		"javascript",
+		-- 		"html",
+		-- 	},
+		-- },
+	},
 	{ name = "jdtls", settings = {} },
 	{
 		name = "gopls",
@@ -83,7 +91,7 @@ for _, lsp in pairs(servers) do
 		})
 	end
 
-	lspconfig[lsp.name].setup({
+	local config = {
 		on_attach = function(client, bufnr)
 			on_attach(client, bufnr)
 			require("mappings-lsp")(bufnr)
@@ -91,5 +99,7 @@ for _, lsp in pairs(servers) do
 		capabilities = capabilities,
 		settings = lsp.settings,
 		opts = opts,
-	})
+	}
+
+	lspconfig[lsp.name].setup(config)
 end
