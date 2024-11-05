@@ -1,0 +1,32 @@
+clear
+ls
+ls | where name == go
+clear
+curl -sS https://starship.rs/install.sh | sh
+clear
+source ~/dotfiles/.config/nushell/config.nu
+ls
+clear
+l;s
+ls
+clear
+ls
+ls | where size > 50
+ls | where size > 50kb
+ls | where size > 50mb
+ls | where size > 50mib
+clear
+ls
+clear
+ls
+cd projects/
+ls
+clear
+ls
+clear
+z dot
+ls
+cd
+cd dotfiles/
+ls
+clear
