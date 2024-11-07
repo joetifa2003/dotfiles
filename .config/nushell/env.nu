@@ -66,6 +66,7 @@ path add "/user/local/go/bin"
 path add "~/zed/bin"
 path add "~/.local/share/bob/nvim-bin"
 path add "/usr/local/android-studio/bin"
+path add ~/.fzf/bin
 
 alias k = kubectl
 alias lg = lazygit

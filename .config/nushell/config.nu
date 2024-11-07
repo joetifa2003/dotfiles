@@ -15,5 +15,9 @@ $env.config = {
     }
 }
 
+def ll [] {
+  ls | sort-by type | reverse
+}
+
 use ~/.cache/starship/init.nu
 source ~/.zoxide.nu
