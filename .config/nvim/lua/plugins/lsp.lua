@@ -19,14 +19,14 @@ return {
 				formatters_by_ft = {
 					templ = { "templ" },
 					lua = { "stylua" },
-					javascript = { { "prettierd", "prettier" } },
-					typescript = { { "prettierd", "prettier" } },
-					typescriptreact = { { "prettierd", "prettier" } },
-					json = { { "prettierd", "prettier" } },
+					javascript = { "prettierd" },
+					typescript = { "prettierd" },
+					typescriptreact = { "prettierd" },
+					json = { "prettierd" },
 					go = { "goimports-reviser", "goimports" },
 				},
 				format_on_save = {
-					timeout_ms = 500,
+					timeout_ms = 1000,
 					lsp_fallback = true,
 				},
 			}

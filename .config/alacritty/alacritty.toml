@@ -6,7 +6,8 @@ size = 14
 TERM="xterm-256color"
 
 [terminal]
-shell = { program = "nu", args = ["-c", "tmux new-session -A -s main"] }
+shell = { program = "zsh", args = ["-c", "source ~/.zshrc; tmux new-session -A -s main"] }
+# shell = { program = "zsh" }
 
 [window]
 decorations = "None"
