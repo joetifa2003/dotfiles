@@ -22,12 +22,14 @@ return {
 					javascript = { "prettierd" },
 					typescript = { "prettierd" },
 					typescriptreact = { "prettierd" },
+					svelte = { "prettierd" },
 					json = { "prettierd" },
 					go = { "goimports-reviser", "goimports" },
+					markdown = { "prettierd" },
 				},
 				format_on_save = {
 					timeout_ms = 1000,
-					lsp_fallback = true,
+					lsp_fallback = false,
 				},
 			}
 

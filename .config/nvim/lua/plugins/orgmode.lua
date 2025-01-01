@@ -48,12 +48,11 @@ return {
 	{
 		"lukas-reineke/headlines.nvim",
 		event = "VeryLazy",
-		ft = { "org", "markdown" },
+		ft = { "org" },
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		opts = {
 			markdown = {
 				bullets = { "◉", "○", "✸", "✿" },
-				headline_highlights = false,
 			},
 			org = {
 				fat_headlines = false,

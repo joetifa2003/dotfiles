@@ -7,11 +7,10 @@ TERM="xterm-256color"
 
 [terminal]
 shell = { program = "zsh", args = ["-c", "source ~/.zshrc; tmux new-session -A -s main"] }
-# shell = { program = "zsh" }
 
 [window]
 decorations = "None"
 dimensions = { lines = 40, columns = 170 }
 dynamic_padding = true
-opacity = 0.9
+opacity = 0.95
 

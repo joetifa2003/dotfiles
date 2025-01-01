@@ -51,7 +51,7 @@ end
 
 function M.setup(cfg)
 	cfg.max_fps = 144
-	cfg.use_fancy_tab_bar = false
+	cfg.use_fancy_tab_bar = true
 	cfg.initial_rows = 50
 	cfg.initial_cols = 160
 	cfg.window_padding = {

@@ -6,6 +6,7 @@ local lspconfig = require("lspconfig")
 -- if you just want default config for the servers then put them in a table
 local servers = {
 	-- { name = "golangci_lint_ls", settings = {} },
+	{ name = "pbls", settings = {} },
 	{ name = "svelte", settings = {} },
 	{ name = "marksman", settings = {} },
 	{ name = "templ", settings = {} },
@@ -14,6 +15,7 @@ local servers = {
 	{ name = "zls", settings = {} },
 	{ name = "rust_analyzer", settings = {} },
 	{ name = "bashls", settings = {} },
+	{ name = "astro", settings = {} },
 	{
 		name = "ts_ls",
 		settings = {
