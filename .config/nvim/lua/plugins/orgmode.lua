@@ -45,20 +45,24 @@ return {
 			})
 		end,
 	},
+	-- {
+	-- 	"lukas-reineke/headlines.nvim",
+	-- 	event = "VeryLazy",
+	-- 	ft = { "org" },
+	-- 	dependencies = "nvim-treesitter/nvim-treesitter",
+	-- 	opts = {
+	-- 		markdown = {
+	-- 			bullets = { "◉", "○", "✸", "✿" },
+	-- 		},
+	-- 		org = {
+	-- 			fat_headlines = false,
+	-- 			headline_highlights = { "Headline" },
+	-- 		},
+	-- 	},
+	-- },
 	{
-		"lukas-reineke/headlines.nvim",
-		event = "VeryLazy",
-		ft = { "org" },
-		dependencies = "nvim-treesitter/nvim-treesitter",
-		opts = {
-			markdown = {
-				bullets = { "◉", "○", "✸", "✿" },
-			},
-			org = {
-				fat_headlines = false,
-				headline_highlights = { "Headline" },
-			},
-		},
+		"OXY2DEV/markview.nvim",
+		lazy = false,
 	},
 	{
 		"wallpants/github-preview.nvim",

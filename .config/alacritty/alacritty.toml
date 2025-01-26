@@ -1,5 +1,6 @@
 [font]
-normal = { family = "JetBrainsMono Nerd Font" }
+# normal = { family = "JetBrainsMono Nerd Font" }
+normal = { family = "0xProto Nerd Font" }
 size = 14
 
 [env]

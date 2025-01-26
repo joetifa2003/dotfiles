@@ -26,6 +26,7 @@ return {
 					json = { "prettierd" },
 					go = { "goimports-reviser", "goimports" },
 					markdown = { "prettierd" },
+					astro = { "prettier" },
 				},
 				format_on_save = {
 					timeout_ms = 1000,
