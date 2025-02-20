@@ -76,3 +76,13 @@ vim.filetype.add({
 		mdx = "markdown",
 	},
 })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*",
+	callback = function(args)
+		-- Check if the file type is not markdown
+		if vim.bo[args.buf].filetype ~= "markdown" then
+			require("conform").format({ bufnr = args.buf })
+		end
+	end,
+})

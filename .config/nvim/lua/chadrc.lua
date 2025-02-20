@@ -51,11 +51,11 @@ M.ui = {
 }
 
 M.base46 = {
-	theme = "mountain",
+	theme = "chadtain",
 	transparency = true,
 	extended_integrations = { "dap" },
 	changed_themes = {
-		["mountain"] = {
+		["chadtain"] = {
 			base_16 = {
 				base02 = "#343434",
 			},

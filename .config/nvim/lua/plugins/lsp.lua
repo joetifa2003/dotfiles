@@ -28,10 +28,12 @@ return {
 					markdown = { "prettierd" },
 					astro = { "prettier" },
 				},
-				format_on_save = {
-					timeout_ms = 1000,
-					lsp_fallback = false,
-				},
+				format_on_save = false,
+
+				-- format_on_save = {
+				-- 	timeout_ms = 1000,
+				-- 	lsp_fallback = false,
+				-- },
 			}
 
 			require("conform").setup(options)

@@ -17,6 +17,11 @@ local servers = {
 	{ name = "bashls", settings = {} },
 	{ name = "astro", settings = {} },
 	{
+		name = "unocss",
+		settings = {},
+		root_dir = lspconfig.util.root_pattern("package.json"),
+	},
+	{
 		name = "ts_ls",
 		settings = {
 			typescript = {
@@ -101,6 +106,7 @@ for _, lsp in pairs(servers) do
 		capabilities = capabilities,
 		settings = lsp.settings,
 		opts = opts,
+		root_dir = lsp.root_dir,
 	}
 
 	lspconfig[lsp.name].setup(config)
