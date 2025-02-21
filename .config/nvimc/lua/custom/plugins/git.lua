@@ -10,6 +10,26 @@ return {
         changedelete = { text = '~' },
       },
     },
+    keys = {
+      {
+        '<leader>gp',
+        '<cmd> Gitsigns preview_hunk <CR>',
+        mode = 'n',
+        desc = '[Git] Preview hunk',
+      },
+      {
+        '<leader>gb',
+        '<cmd> Gitsigns blame_line <CR>',
+        mode = 'n',
+        desc = '[Git] Blame line',
+      },
+      {
+        '<leader>gB',
+        '<cmd> Gitsigns blame <CR>',
+        mode = 'n',
+        desc = '[Git] Blame History',
+      },
+    },
   },
   {
     'kdheepak/lazygit.nvim',

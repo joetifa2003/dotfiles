@@ -39,7 +39,6 @@ return {
 			require("conform").setup(options)
 		end,
 	},
-
 	{
 		"leoluz/nvim-dap-go",
 		lazy = false,
