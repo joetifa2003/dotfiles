@@ -3,7 +3,6 @@ local WIDTH_RATIO = 0.5
 
 return {
 	"nvim-tree/nvim-tree.lua",
-
 	opts = {
 		view = {
 			float = {
