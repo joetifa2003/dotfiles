@@ -35,12 +35,18 @@ return {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
     },
+
+    {
+      'onsails/lspkind.nvim',
+    },
   },
   config = function()
     -- See `:help cmp`
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
     luasnip.config.setup {}
+
+    local lspKind = require 'lspkind'
 
     cmp.setup {
       snippet = {
@@ -49,6 +55,11 @@ return {
         end,
       },
       completion = { completeopt = 'menu,menuone,noinsert' },
+
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
 
       -- For an understanding of why these mappings were
       -- chosen, you will need to read `:help ins-completion`
@@ -72,6 +83,9 @@ return {
         { name = 'buffer' },
         { name = 'path' },
         { name = 'nvim_lsp_signature_help' },
+      },
+      formatting = {
+        format = lspKind.cmp_format {},
       },
     }
 

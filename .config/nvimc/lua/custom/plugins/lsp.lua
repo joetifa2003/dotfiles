@@ -71,6 +71,7 @@ return {
       },
     },
   },
+  { 'echasnovski/mini.comment', version = '*' },
   {
     'windwp/nvim-autopairs',
     opts = {},
