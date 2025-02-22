@@ -1,88 +1,92 @@
-vim.opt.termguicolors = true
-vim.g.base46_cache = vim.fn.stdpath("data") .. "/nvchad/base46/"
-vim.g.mapleader = " "
-vim.g.codeium_disable_bindings = 1
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
--- bootstrap lazy and all plugins
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+vim.g.have_nerd_font = true
 
-if not vim.loop.fs_stat(lazypath) then
-	local repo = "https://github.com/folke/lazy.nvim.git"
-	vim.fn.system({ "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath })
-end
+vim.opt.number = true
 
-vim.opt.rtp:prepend(lazypath)
+vim.opt.mouse = 'a'
 
-local lazy_config = require("configs.lazy")
-
--- load plugins
-require("lazy").setup({
-	{
-		"NvChad/NvChad",
-		lazy = false,
-		branch = "v2.5",
-		import = "nvchad.plugins",
-		config = function()
-			require("options")
-		end,
-	},
-
-	{ import = "plugins" },
-}, lazy_config)
-
--- load theme
-dofile(vim.g.base46_cache .. "defaults")
-dofile(vim.g.base46_cache .. "statusline")
-
-require("nvchad.autocmds")
+vim.opt.showmode = false
 
 vim.schedule(function()
-	require("mappings")
+  vim.opt.clipboard = 'unnamedplus'
 end)
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+vim.opt.breakindent = true
+
+vim.opt.undofile = true
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+vim.opt.signcolumn = 'yes'
+
+vim.opt.updatetime = 250
+
+vim.opt.timeoutlen = 300
+
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+vim.opt.list = true
+vim.opt.listchars = { tab = '  ', trail = '·', nbsp = '␣' }
+
+vim.opt.inccommand = 'split'
+
+vim.opt.cursorline = true
+
+vim.opt.scrolloff = 10
+
+vim.opt.cmdheight = 0
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+vim.o.wrap = true
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
 
-local autocmd = vim.api.nvim_create_autocmd
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
+  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+  if vim.v.shell_error ~= 0 then
+    error('Error cloning lazy.nvim:\n' .. out)
+  end
+end ---@diagnostic disable-next-line: undefined-field
+vim.opt.rtp:prepend(lazypath)
 
-autocmd("BufReadPost", {
-	pattern = "*",
-	callback = function()
-		local line = vim.fn.line("'\"")
-		if
-			line > 1
-			and line <= vim.fn.line("$")
-			and vim.bo.filetype ~= "commit"
-			and vim.fn.index({ "xxd", "gitrebase" }, vim.bo.filetype) == -1
-		then
-			vim.cmd('normal! g`"')
-		end
-	end,
+require('lazy').setup({
+  { import = 'custom.plugins' },
+}, {
+  ui = {
+    -- If you are using a Nerd Font: set icons to an empty table which will use the
+    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
+    icons = vim.g.have_nerd_font and {} or {
+      cmd = '⌘',
+      config = '🛠',
+      event = '📅',
+      ft = '📂',
+      init = '⚙',
+      keys = '🗝',
+      plugin = '🔌',
+      runtime = '💻',
+      require = '🌙',
+      source = '📄',
+      start = '🚀',
+      task = '📌',
+      lazy = '💤 ',
+    },
+  },
 })
 
-vim.filetype.add({
-	extension = {
-		templ = "templ",
-	},
-})
+require 'mappings'
 
-vim.filetype.add({
-	extension = {
-		mdx = "markdown",
-	},
-})
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		-- Check if the file type is not markdown
-		if vim.bo[args.buf].filetype ~= "markdown" then
-			require("conform").format({ bufnr = args.buf })
-		end
-	end,
-})
+-- The line beneath this is called `modeline`. See `:help modeline`
+-- vim: ts=2 sts=2 sw=2 et
