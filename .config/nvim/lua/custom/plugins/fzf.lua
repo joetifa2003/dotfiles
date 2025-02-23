@@ -36,20 +36,62 @@ return {
       {
         '<leader>fw',
         '<cmd> FzfLua live_grep <CR>',
-        mode = 'n',
         desc = 'live grep',
       },
       {
         '<leader>flw',
         '<cmd> FzfLua blines <CR>',
-        mode = 'n',
         desc = 'live grep document',
       },
       {
         '<leader>ff',
         '<cmd> FzfLua files <CR>',
-        mode = 'n',
         desc = 'live grep',
+      },
+      {
+        'gd',
+        '<cmd> FzfLua lsp_definitions <CR>',
+        desc = 'goto definitions',
+      },
+      {
+        'gr',
+        '<cmd> FzfLua lsp_references <CR>',
+        desc = 'goto references',
+      },
+      {
+        'gi',
+        '<cmd> FzfLua lsp_implementations <CR>',
+        desc = 'goto implementations',
+      },
+      {
+        '<leader>lwd',
+        '<cmd> FzfLua diagnostics_workspace <CR>',
+        desc = 'workspace diagnostics',
+      },
+      {
+        '<leader>lcd',
+        '<cmd> FzfLua diagnostics_document <CR>',
+        desc = 'current diagnostics',
+      },
+      {
+        '<leader>ls',
+        '<cmd> FzfLua lsp_document_symbols <CR>',
+        desc = 'current symbols',
+      },
+      {
+        '<leader>lws',
+        '<cmd> FzfLua lsp_workspace_symbols <CR>',
+        desc = 'workspace symbols',
+      },
+      {
+        '<leader>fb',
+        '<cmd> FzfLua buffers <CR>',
+        desc = 'find buffers',
+      },
+      {
+        '<leader>gs',
+        '<cmd> FzfLua git_status <CR>',
+        desc = 'git status',
       },
     },
   },

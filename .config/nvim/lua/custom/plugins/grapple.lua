@@ -1,7 +1,6 @@
 return {
   {
     'cbochs/grapple.nvim',
-    lazy = false,
     opts = {
       win_opts = {
         width = 80,

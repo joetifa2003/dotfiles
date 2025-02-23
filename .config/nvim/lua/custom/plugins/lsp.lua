@@ -71,11 +71,6 @@ return {
       },
     },
   },
-  { 'echasnovski/mini.comment', version = '*' },
-  {
-    'windwp/nvim-autopairs',
-    opts = {},
-  },
   {
     'chrisgrieser/nvim-lsp-endhints',
     event = 'LspAttach',
@@ -83,6 +78,7 @@ return {
   },
   {
     'neovim/nvim-lspconfig',
+    event = 'BufReadPost',
     dependencies = {
       { 'williamboman/mason.nvim', opts = {} },
       'williamboman/mason-lspconfig.nvim',

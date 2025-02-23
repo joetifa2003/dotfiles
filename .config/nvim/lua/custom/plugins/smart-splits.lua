@@ -1,6 +1,5 @@
 return {
   'mrjones2014/smart-splits.nvim',
-  lazy = false,
   keys = {
     {
       '<C-h>',
@@ -21,7 +20,7 @@ return {
     {
       '<C-k>',
       function()
-        require('smart-splits').move_cursor_right()
+        require('smart-splits').move_cursor_up()
       end,
       mode = 'n',
       desc = 'Move up split',
@@ -29,7 +28,7 @@ return {
     {
       '<C-j>',
       function()
-        require('smart-splits').move_cursor_right()
+        require('smart-splits').move_cursor_down()
       end,
       mode = 'n',
       desc = 'Move down split',

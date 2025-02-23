@@ -24,9 +24,6 @@ return {
       },
     },
 
-    -- Adds other completion capabilities.
-    --  nvim-cmp does not ship with all sources by default. They are split
-    --  into multiple repos for maintenance purposes.
     {
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'saadparwaiz1/cmp_luasnip',
@@ -85,11 +82,14 @@ return {
         { name = 'nvim_lsp_signature_help' },
       },
       formatting = {
-        format = lspKind.cmp_format {},
+        format = lspKind.cmp_format {
+          maxwidth = {
+            menu = 50, -- leading text (labelDetails)
+            abbr = 50, -- actual suggestion item
+          },
+        },
       },
+      preselect = cmp.PreselectMode.None,
     }
-
-    local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
-    cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
   end,
 }
