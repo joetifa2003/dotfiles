@@ -2,6 +2,7 @@ return {
   {
     'ibhagwan/fzf-lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
+    lazy = false,
     opts = {
       keymap = {
         builtin = {
@@ -32,6 +33,11 @@ return {
         },
       },
     },
+    config = function(_, opts)
+      local fzf = require 'fzf-lua'
+      fzf.setup(opts)
+      vim.cmd 'FzfLua register_ui_select'
+    end,
     keys = {
       {
         '<leader>fw',
