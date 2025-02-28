@@ -14,7 +14,7 @@ return {
     keys = {
       {
         '<leader>gp',
-        '<cmd> Gitsigns preview_hunk <CR>',
+        '<cmd> Gitsigns preview_hunk_inline <CR>',
         mode = 'n',
         desc = '[Git] Preview hunk',
       },
@@ -29,6 +29,18 @@ return {
         '<cmd> Gitsigns blame <CR>',
         mode = 'n',
         desc = '[Git] Blame History',
+      },
+      {
+        ']h',
+        '<cmd> Gitsigns next_hunk <CR>',
+        mode = 'n',
+        desc = '[Git] Next Hunk',
+      },
+      {
+        '[h',
+        '<cmd> Gitsigns prev_hunk <CR>',
+        mode = 'n',
+        desc = '[Git] Prev Hunk',
       },
     },
   },
