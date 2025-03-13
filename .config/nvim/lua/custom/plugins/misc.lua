@@ -1,4 +1,5 @@
 return {
+  { 'nvim-web-devicons', lazy = false },
   { 'andweeb/presence.nvim', lazy = false },
   { 'wakatime/vim-wakatime', lazy = false },
   {
