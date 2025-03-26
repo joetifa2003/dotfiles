@@ -3,6 +3,8 @@ return {
   ---@type snacks.Config
   lazy = false,
   opts = {
+    input = {},
+    notifier = {},
     picker = {
       ui_select = true,
       previewers = {
@@ -79,7 +81,11 @@ return {
     {
       '<leader>gs',
       function()
-        Snacks.picker.git_status()
+        Snacks.picker.git_status {
+          on_show = function()
+            vim.cmd 'stopinsert'
+          end,
+        }
       end,
     },
     {
@@ -91,20 +97,33 @@ return {
     {
       'gr',
       function()
-        Snacks.picker.lsp_references()
+        Snacks.picker.lsp_references {
+          on_show = function()
+            vim.cmd 'stopinsert'
+          end,
+        }
       end,
     },
     {
       'gi',
       function()
-        Snacks.picker.lsp_implementations()
+        Snacks.picker.lsp_implementations {
+          on_show = function()
+            vim.cmd 'stopinsert'
+          end,
+        }
       end,
     },
-
     {
       '<leader>gg',
       function()
         Snacks.lazygit()
+      end,
+    },
+    {
+      '<leader>nth',
+      function()
+        Snacks.notifier.show_history()
       end,
     },
   },

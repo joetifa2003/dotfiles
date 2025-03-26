@@ -1,4 +1,16 @@
 return {
+  {
+    'akinsho/git-conflict.nvim',
+    version = '*',
+    config = true,
+    keys = {
+      {
+        '<leader>gc',
+        '<cmd> GitConflictListQf <CR>',
+        desc = '[Git] List Conflicts',
+      },
+    },
+  },
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     event = 'BufReadPost',
