@@ -33,5 +33,33 @@ return {
       mode = 'n',
       desc = 'Move down split',
     },
+    {
+      '<M-h>',
+      function()
+        require('smart-splits').resize_left()
+      end,
+      desc = 'Resize left split',
+    },
+    {
+      '<M-l>',
+      function()
+        require('smart-splits').resize_right()
+      end,
+      desc = 'Resize right split',
+    },
+    {
+      '<M-j>',
+      function()
+        require('smart-splits').resize_down()
+      end,
+      desc = 'Resize down split',
+    },
+    {
+      '<M-k>',
+      function()
+        require('smart-splits').resize_up()
+      end,
+      desc = 'Resize up split',
+    },
   },
 }
