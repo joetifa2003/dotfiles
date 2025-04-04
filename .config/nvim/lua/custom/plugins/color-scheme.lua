@@ -15,6 +15,11 @@ return {
         transparent = true,
         dimInactive = false,
         terminalColors = true, -- define vim.g.terminal_color_{0,17}
+        overrides = function()
+          return {
+            BlinkCmpMenu = { bg = '#12120f' },
+          }
+        end,
       }
 
       vim.cmd.colorscheme 'kanagawa-dragon'

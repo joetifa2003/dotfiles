@@ -1,8 +1,17 @@
 return {
   'saghen/blink.cmp',
   dependencies = {
-    'rafamadriz/friendly-snippets',
     { 'xzbdmw/colorful-menu.nvim', opts = {} },
+    {
+      'L3MON4D3/LuaSnip',
+      version = 'v2.*',
+      dependencies = {
+        'rafamadriz/friendly-snippets',
+      },
+      config = function()
+        require('luasnip.loaders.from_vscode').lazy_load()
+      end,
+    },
   },
   version = '*',
   event = 'InsertEnter',
@@ -14,6 +23,9 @@ return {
       preset = 'enter',
       ['<Tab>'] = { 'select_next', 'fallback' },
       ['<S-Tab>'] = { 'select_prev', 'fallback' },
+    },
+    snippets = {
+      preset = 'luasnip',
     },
 
     appearance = {
@@ -48,6 +60,16 @@ return {
         draw = {
           columns = { { 'kind_icon' }, { 'label', gap = 1 } },
           components = {
+            kind_icon = {
+              text = function(ctx)
+                local kind_icon, _, _ = require('mini.icons').get('lsp', ctx.kind)
+                return kind_icon
+              end,
+              highlight = function(ctx)
+                local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
+                return hl
+              end,
+            },
             label = {
               text = function(ctx)
                 return require('colorful-menu').blink_components_text(ctx)
@@ -64,6 +86,5 @@ return {
   opts_extend = { 'sources.default' },
   config = function(_, opts)
     require('blink.cmp').setup(opts)
-    vim.api.nvim_set_hl(0, 'BlinkCmpMenu', { bg = '#12120f' })
   end,
 }
