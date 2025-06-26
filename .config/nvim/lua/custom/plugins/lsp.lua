@@ -1,5 +1,15 @@
 local servers = {
   ts_ls = {
+    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+    init_options = {
+      plugins = {
+        {
+          name = '@vue/typescript-plugin',
+          location = vim.fn.stdpath 'data' .. '/mason/packages/vue-language-server/node_modules/@vue/language-server',
+          languages = { 'vue' },
+        },
+      },
+    },
     settings = {
       typescript = {
         inlayHints = {
@@ -27,7 +37,7 @@ local servers = {
   gopls = {
     settings = {
       gopls = {
-        buildFlags = { '-tags=js' },
+        buildFlags = { '-tags=js,integration' },
         hints = {
           assignVariableTypes = true,
           compositeLiteralFields = true,
@@ -54,13 +64,6 @@ local servers = {
   eslint = {},
 }
 
-local formatters = {
-  'stylua',
-  'goimports-reviser',
-  'goimports',
-  'prettierd',
-}
-
 return {
   {
     'folke/lazydev.nvim',
@@ -79,22 +82,15 @@ return {
   },
   {
     'neovim/nvim-lspconfig',
-    event = 'BufReadPost',
     dependencies = {
       { 'williamboman/mason.nvim', opts = {} },
       'williamboman/mason-lspconfig.nvim',
-      'WhoIsSethDaniel/mason-tool-installer.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
     },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
-          local map = function(keys, func, desc, mode)
-            mode = mode or 'n'
-            vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-          end
-
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           client.server_capabilities.semanticTokensProvider = nil
 
@@ -132,20 +128,18 @@ return {
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
+      vim.lsp.config('*', {
+        capabilities = capabilities,
+      })
 
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, formatters)
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      for server_name, server in pairs(servers) do
+        vim.lsp.config(server_name, server)
+      end
 
       require('mason-lspconfig').setup {
         automatic_installation = false,
-        handlers = {
-          function(server_name)
-            local server = servers[server_name] or {}
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
-          end,
-        },
+        automatic_enable = true,
+        ensure_installed = {},
       }
     end,
   },

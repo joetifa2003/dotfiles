@@ -10,7 +10,7 @@ endif
 syntax clear
 
 " Keywords
-syntax keyword weaverKeyword if else while for match return in
+syntax keyword weaverKeyword if else while for match return in try raise
 
 " Numbers
 syntax match weaverNumber "\<\d\+\>"

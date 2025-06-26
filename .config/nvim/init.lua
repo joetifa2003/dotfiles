@@ -43,6 +43,8 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.wrap = true
+vim.o.foldmethod = 'expr'
+vim.o.foldlevel = 99
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
