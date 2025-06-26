@@ -38,6 +38,7 @@ return { -- Autoformat
       json = { 'prettierd' },
       go = { 'goimports-reviser', 'goimports' },
       markdown = { 'prettierd' },
+      html = { 'prettierd' },
     },
   },
 }

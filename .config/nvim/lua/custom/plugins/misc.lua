@@ -1,6 +1,5 @@
 return {
-  { 'nvim-web-devicons', lazy = false },
-  { 'andweeb/presence.nvim', lazy = false },
+  { 'nvim-tree/nvim-web-devicons', lazy = false },
   { 'wakatime/vim-wakatime', lazy = false },
   {
     'windwp/nvim-ts-autotag',
