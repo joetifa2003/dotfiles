@@ -40,6 +40,8 @@ return {
     },
     git = {
       enable = true,
+      -- ignore = false,
+      -- timeout = 500,
     },
 
     renderer = {

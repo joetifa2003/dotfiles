@@ -37,7 +37,7 @@ local servers = {
   gopls = {
     settings = {
       gopls = {
-        buildFlags = { '-tags=js,integration' },
+        buildFlags = { '-tags=js,integration,wireinject' },
         hints = {
           assignVariableTypes = true,
           compositeLiteralFields = true,
@@ -62,6 +62,9 @@ local servers = {
   marksman = {},
   typos_lsp = {},
   eslint = {},
+  unocss = {
+    filetypes = { 'vue' },
+  },
 }
 
 return {

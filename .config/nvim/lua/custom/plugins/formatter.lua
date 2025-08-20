@@ -39,6 +39,7 @@ return { -- Autoformat
       go = { 'goimports-reviser', 'goimports' },
       markdown = { 'prettierd' },
       html = { 'prettierd' },
+      vue = { 'prettierd' },
     },
   },
 }
