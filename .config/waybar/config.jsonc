@@ -1,149 +1,196 @@
 {
-  // MAIN BAR //
-  "layer": "top",
-  "position": "top",
-  "name": "main",
+  "height": 40,
+  "spacing": 5,
 
-  "margin-left": 16,
-  "margin-right": 16,
-
-  "modules-left": [
-    "tray",
-    "custom/spacer",
-    "hyprland/workspaces",
-    "custom/spacer",
-  ],
-
+  "modules-left": ["group/Utilities", "group/workspaces", "mpris"],
+  "modules-center": ["group/windows"],
   "modules-right": [
-    "custom/spacer",
-    "cpu",
-    "temperature",
-    "memory",
-    "network",
-    "custom/spacer",
-    "pulseaudio",
-    "battery",
-    "custom/spacer",
-    "clock",
+    "group/cpuram",
+    "custom/split",
+    "group/system",
+    "custom/split",
+    "group/tray",
   ],
 
-  "backlight": {
-    "format": "{icon} {percent}%",
-    "format-icons": ["󱩎", "󱩑", "󱩓", "󱩕", "󰛨"],
-    "on-click": "brightnessctl set +5%",
-    "on-click-right": "brightnessctl set 5%-",
-  },
-
-  "battery": {
-    "states": {
-      "good": 50,
-      "warning": 20,
-      "critical": 10,
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": "",
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": "󰂄 {capacity}%",
-    "format-plugged": "󰚥 {capacity}%",
-    "format-alt": "{icon} {time}",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
   },
 
-  "clock": {
+  "custom/openbracket": {
+    "format": "[",
+    "tooltip": false,
+  },
+
+  "custom/closebracket": {
+    "format": "]",
+    "tooltip": false,
+  },
+
+  "custom/split": {
+    "format": " | ",
+    "tooltip": false,
+  },
+
+  "group/Utilities": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/openbracket",
+      "custom/arch",
+      "idle_inhibitor",
+      "custom/closebracket",
+    ],
+  },
+  "custom/arch": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "fuzzel",
+  },
+
+  "group/workspaces": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/openbracket",
+      "hyprland/workspaces",
+      "custom/closebracket",
+    ],
+  },
+  "hyprland/workspaces": {
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "enable-bar-scroll": true,
+    "disable-scroll-wraparound": true,
+    "active-only": false,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "default": "•",
+    },
+  },
+
+  "mpris": {
+    "format": "[   {status_icon} | {dynamic} ]",
     "interval": 1,
-    "format": " {:%H:%M:%S    %d.%m}",
-    "tooltip-format": "{:%d.%m.%Y   Week %W}\n\n<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode": "month",
-      "mode-mon-col": 3,
-      "weeks-pos": "right", // Nicked from Archttila
-      "on-scroll": 1,
-      "format": {
-        "months": "<span color='#cba6f7'><b>{}</b></span>",
-        "days": "<span color='#cdd6f4'><b>{}</b></span>",
-        "weeks": "<span color='#94e2d5'> W{}</span>",
-        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
-        "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>",
-      },
+    "dynamic-len": 40,
+    "status-icons": {
+      "playing": "▶",
+      "paused": "⏸",
+      "stopped": "",
     },
+    "dynamic-order": ["artist"],
+  },
+
+  "group/windows": {
+    "orientation": "horizontal",
+    "modules": ["custom/openbracket", "hyprland/window", "custom/closebracket"],
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 40,
+    "min-length": 20,
+    "all-outputs": true,
+  },
+
+  "group/cpuram": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/openbracket",
+      "cpu",
+      "custom/split",
+      "memory",
+      "custom/closebracket",
+    ],
   },
 
   "cpu": {
-    "interval": 4,
-    "format": " {usage}%",
-    "states": {
-      "warning": 80,
-      "critical": 95,
-    },
+    "format": "CPU:{usage}%",
+    "tooltip": false,
+    "interval": 2,
+    "on-click": "kitty -e btop",
   },
 
   "memory": {
-    "interval": 4,
-    "format": " {percentage}%",
-    "states": {
-      "warning": 80,
-      "critical": 95,
-    },
-    "tooltip": "{}",
-    "tooltip-format": "{used}/{total} GiB",
-  },
-
-  "network": {
-    "interval": 2,
-    "format": "󱘖  Offline",
-    "format-wifi": "{icon} {bandwidthDownBits}",
-    "format-ethernet": "󰈀 {bandwidthDownBits}",
-    "min-length": 11,
-    "tooltip": "{}",
-    "tooltip-format-wifi": "{ifname}\n{essid}\n{signalStrength}% \n{frequency} GHz\n󰇚 {bandwidthDownBits}\n󰕒 {bandwidthUpBits}",
-    "tooltip-format-ethernet": "{ifname}\n󰇚 {bandwidthDownBits} \n󰕒 {bandwidthUpBits}",
-    "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "states": {
-      "normal": 25,
-    },
-  },
-
-  "hyprland/workspaces": {
-    "on-click": "activate",
-    "persistent-workspaces": {
-      "*": 5, // 3 workspaces by default on every monitor
-    },
-  },
-
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "󰂰 {volume}%",
-    "format-bluetooth-muted": "󰂲 {icon}",
-    "format-muted": "󰝟",
-    "format-icons": {
-      "headphone": "󰋋",
-      "hands-free": "󰥰",
-      "headset": "󰋎",
-      "phone": "󰏲",
-      "portable": "󰄝",
-      "car": "󰄋",
-      "default": ["󰕿", "󰖀", "󰕾"],
-    },
-    "on-click": "pavucontrol-qt",
-    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
-    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
-  },
-
-  "temperature": {
-    "hwmon-path": "/sys/devices/platform/PNP0C14:02/wmi_bus/wmi_bus-PNP0C14:02/F1DDEE52-063C-4784-A11E-8A06684B9B01/hwmon/hwmon5/temp1_input",
-    "critical-threshold": 90,
-    "interval": 4,
-    "format": "{icon} {temperatureC}°",
-    "format-icons": ["", "", "", "", ""],
+    "format": "RAM:{}%",
     "tooltip": false,
+    "interval": 2,
+    "on-click": "kitty -e btop",
+  },
+
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/openbracket",
+      "clock",
+      "custom/split",
+      "battery",
+      "custom/closebracket",
+    ],
+  },
+  "clock": {
+    "format": "{:%I:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "onclick": "kalender",
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "on-click": "wlogout",
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": "",
+    },
+  },
+
+  "group/clock": {
+    "orientation": "horizontal",
+    "modules": ["custom/openbracket", "clock", "custom/closebracket"],
+  },
+
+  "group/tray": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/openbracket",
+      "tray",
+      "custom/split",
+      "custom/notification",
+      "custom/closebracket",
+    ],
   },
 
   "tray": {
-    "icon-size": 17,
+    "icon-size": 16,
     "spacing": 8,
-  },
-
-  "custom/spacer": {
-    "format": " \\\\ ",
-    "tooltip": false,
   },
 }

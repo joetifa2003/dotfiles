@@ -1,220 +1,197 @@
-@define-color background  #151520;
-@define-color warning     #f38ba8;
-@define-color caution     #45475a;
-@define-color performance #f5c2e7;
-@define-color audio       #cba6f7;
-@define-color misc        #94e2d5;
-@define-color date        #a6e3a1;
-@define-color work        #b4befe;
-@define-color window      #b4befe;
-@define-color resize      #eba0ac;
-@define-color process     #89b4fa;
+/* colors defined at top for easy configuring */
+@define-color background #2C2A24;
+@define-color second-background #3A372F;
+@define-color text #DDD5C4;
+@define-color borders #A0907A;
+@define-color focused #D08B57;
+@define-color focused2 #BFAA80;
+@define-color color1 #7699A3;
+@define-color color2 #8D7AAE;
+@define-color color3 #78997A;
+@define-color urgent #B05A5A;
 
+
+/* font declared */
 * {
+    font-family: "JetBrains Mono Nerd Font";
+    font-size: 15px;
+}
+#custom-openbracket,
+#custom-closebracket{
+    margin: 0 4px ;
+}
+
+#custom-notification {
+  font-family: "NotoSansMono Nerd Font";
+}
+
+/* idk what all this does */
+window#waybar {
+    background-color: transparent;
+    border-bottom: 0;
+    color: @text;
+    transition: background-color 0.5s;
+}
+window#waybar.hidden {
+    opacity: 0.2;
+}
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+
+/* configuring the modules */
+.modules-left {
+    margin: 8px 0 0 16px;
+    padding: 0 0 0 7px;
+    background-color: @background;
+    border: 2px solid @focused;
+    border-radius: 5px;
+}
+.modules-center {
+    margin: 8px 0 0 0;
+    padding: 0 10px 0 10px;
+    background-color: @background;
+    border: 2px solid @focused;
+    border-radius: 5px;
+}
+.modules-right {
+    margin: 8px 16px 0 0;
+    padding: 0 10px 0 10px;
+    background-color: @background;
+    border: 2px solid @focused;
+    border-radius: 5px;
+}
+
+
+/* whats this?? */
+button {
   border: none;
-  border-radius: 0;
-  min-height: 0;
-  margin: 0;
-  padding: 0;
-  box-shadow: none;
-  text-shadow: none;
 }
 
-/* Keyframes for main bar criticals */
-@keyframes blink-critical-text {
+
+/* left island */
+
+/* menu pannel */
+#custom-arch,
+#custom-powerprofile,
+#custom-themeswitcher{
+    padding-right: 10px;
+    padding-left: 5px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+#custom-arch:hover {
+    color: @color1;
+}
+#custom-powerprofile:hover{
+    color: @color1
+}
+#custom-themeswitcher:hover {
+    color: @color1;
+}
+
+/* workspace pannel */
+#workspaces button {
+    padding: 0 2px;
+    background-color: transparent;
+    color: @text;
+    border-radius: 0;
+}
+#workspaces button:hover {
+    background-color: @second-background;
+}
+#workspaces button.active {
+    color: @focused2;
+    background-color: @second-background;
+}
+#workspaces button.urgent {
+    background-color: @urgent;
+}
+
+/* no idea what this does */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* media player */
+#mpris {
+    margin: 0 0 0 5px;
+    padding: 0 9px ;
+    background-color: @background;
+    color: @text;
+}
+#mpris.playing {
+    background-color: @color3;
+    border-radius: 2px;
+    color: @background;
+}
+
+
+/* center module  */
+#window{
+    padding: 0 5px;
+}
+
+/* Right Island */
+
+/* module general styles */
+#clock,
+#battery,
+#cpu,
+#memory,
+#custom-clipboard,
+#custom-bluetooth,
+#network {
+  padding: 0 10px ;
+}
+#clock:hover,
+#battery:hover,
+#custom-cpu:hover,
+#custom-clipboard:hover,
+#custom-bluetooth:hover,
+#network:hover,
+#idle_inhibitor:hover,
+#custom-swaync:hover,
+#backlight:hover,
+#wireplumber:hover{
+    color: @color1;
+}
+#idle_inhibitor{
+  padding: 0 10px 0 0;
+}
+#custom-powerprofile{
+  padding: 0 8px 0 4px;
+}
+/* Remaining Modules */
+#backlight,
+#wireplumber{
+    padding: 0 5px;
+}
+#wireplumber.muted {
+  background-color: @color2;
+}
+#custom-swaync {
+    padding: 0 10px 0 5px;
+    font-size: 16px;       /* same scale as other icons */
+    color: @text;
+}
+#battery.charging,
+#battery.plugged {
+  background-color: @focused2 ;
+  color: @background;
+}
+#battery.critical:not(.charging) {
+  background-color: @urgent;
+  color: @text;
+  animation: blink 0.5s steps(12) infinite alternate;
+}
+@keyframes blink {
   to {
-    color: @warning;
+    background-color: @second-background;
+    color: @text;
   }
-}
-
-/* Keyframes for main bar modifiers */
-@keyframes blink-modifier-text {
-  to {
-    color: @caution;
-  }
-}
-
-/* Main bar defaults */ /* {{{ */
-#waybar.main {
-  background: #1e1e2e;
-  font-family: "JetBrains Mono Nerd Font";
-  font-size: 11pt;
-  font-weight: 500;
-}
-
-#waybar.main button {
-  font-family: JetBrains Mono Nerd Font;
-  font-size: 11pt;
-  font-weight: 500;
-  transition: all 0.15s ease-in-out;
-}
-
-/* Main bar modules */ /* {{{ */
-#waybar.main #battery,
-#waybar.main #network,
-#waybar.main #battery,
-#waybar.main #backlight,
-#waybar.main #clock,
-#waybar.main #cpu,
-#waybar.main #memory,
-#waybar.main #pulseaudio,
-#waybar.main #temperature,
-#waybar.main #tray,
-#waybar.main #custom-fans {
-  padding-left: 8pt;
-  padding-right: 8pt;
-  padding-bottom: 4px;
-  padding-top: 4px;
-  background: transparent;
-}
-
-#waybar.main #tray {
-  padding-right: 6pt;
-}
-
-/* Module colors */
-#waybar.main #cpu,
-#waybar.main #temperature,
-#waybar.main #memory,
-#waybar.main #disk,
-#waybar.main #network {
-  color: @performance;
-}
-
-#waybar.main #backlight,
-#waybar.main #pulseaudio {
-  color: @audio;
-}
-
-#waybar.main #custom-fans,
-#waybar.main #battery {
-  color: @misc;
-}
-
-#waybar.main #clock {
-  color: @date;
-}
-
-#waybar.main #network {
-  padding-right: 5px;
-  padding-left: 5px;
-  color: @caution;
-  background: transparent;
-}
-
-#waybar.main #network.wifi.normal,
-#waybar.main #network.ethernet {
-  color: @performance;
-  padding-right: 10px;
-}
-
-#waybar.main #network.wifi {
-  color: @warning;
-  padding-right: 10px;
-} /* }}} */
-
-/* Main bar criticals */
-#waybar.main #custom-nvidia.critical,
-#waybar.main #custom-battery.critical,
-#waybar.main #workspaces button.urgent,
-#waybar.main #workspaces button.special.urgent,
-#waybar.main #memory.swap.critical,
-#waybar.main #memory.ram.critical,
-#waybar.main #cpu.critical,
-#waybar.main #temperature.critical,
-#waybar.main #battery.critical.discharging {
-  color: @caution;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-name: blink-critical-text;
-  animation-duration: 1s;
-  animation-timing-function: steps(15);
-}
-
-/* Main bar warnings */
-#waybar.main #pulseaudio.muted {
-  color: @caution;
-}
-
-#waybar.main #battery.warning,
-#waybar.main #battery.warning.discharging {
-  color: @warning;
-}
-
-/* Battery chargin */
-#waybar.main #battery.charging {
-  color: @misc;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-name: blink-modifier-text;
-  animation-duration: 1s;
-  animation-timing-function: steps(15);
-}
-
-/* Workspace */
-/* Default workspace settings */
-#waybar.main #workspaces button {
-  color: @caution;
-  background: transparent;
-  border: 1.5px solid transparent;
-  padding-left: 2pt;
-  padding-right: 2pt;
-  border-radius: 16px;
-  margin-bottom: 8px;
-  margin-top: 8px;
-  margin-left: 4px;
-  margin-right: 4px;
-  transition: all 0.25s ease;
-}
-
-/* Focused workspace */
-#waybar.main #workspaces button.visible {
-  color: @window;
-}
-
-/* Focused workspace & monitor */
-#waybar.main #workspaces button.active {
-  color: @window;
-  border: 1.5px solid @caution;
-}
-
-/* Style when cursor is on the button */
-#waybar.main #workspaces button:hover {
-  color: @window;
-}
-
-/* Special workplace animation */
-#waybar.main #workspaces button.special.active {
-  border: 1.5px solid transparent;
-  color: @window;
-  transition: all 0s ease;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-name: blink-modifier-text;
-  animation-duration: 1s;
-  animation-timing-function: steps(15);
-}
-
-/* Custom slashes as spacers */
-#waybar.main #custom-spacer {
-  font-size: 11pt;
-  font-weight: bold;
-  color: @caution;
-  background: transparent;
-}
-
-/* Tooltip */
-tooltip {
-  background: @background;
-  border: 3px solid @caution;
-  border-radius: 8px;
-  font-weight: 500;
-  font-family: "JetBrains Mono Nerd Font";
-}
-
-#waybar.main #tray menu {
-  background: @background;
-  border: 2px solid @caution;
-  border-radius: 0px;
-  padding: 10px 5px;
 }
