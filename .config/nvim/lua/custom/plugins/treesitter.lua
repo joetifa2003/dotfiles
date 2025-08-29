@@ -5,7 +5,7 @@ return { -- Highlight, edit, and navigate code
   build = ':TSUpdate',
   config = function()
     vim.api.nvim_create_autocmd('FileType', {
-      pattern = { 'go', 'javascript', 'typescript', 'typescriptreact', 'json', 'markdown', 'hyprlang' },
+      pattern = { 'go', 'javascript', 'typescript', 'typescriptreact', 'json', 'markdown', 'hyprlang', 'jsonc' },
       callback = function()
         vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
         vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"

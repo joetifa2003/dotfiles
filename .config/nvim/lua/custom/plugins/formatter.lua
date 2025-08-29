@@ -40,6 +40,7 @@ return { -- Autoformat
       markdown = { 'prettierd' },
       html = { 'prettierd' },
       vue = { 'prettierd' },
+      jsonc = { 'prettierd' },
     },
   },
 }
