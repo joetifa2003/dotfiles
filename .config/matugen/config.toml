@@ -36,3 +36,8 @@ post_hook = "pkill -USR1 cava"
 [templates.btop]
 input_path = './templates/btop.theme'
 output_path = '~/.config/btop/themes/matugen.theme'
+
+[templates.hyprland]
+input_path = './templates/hypr.conf'
+output_path = '../hypr/colors.conf'
+post_hook = 'hyprctl reload'
