@@ -1,7 +1,9 @@
-[config.wallpaper]
-command = "swww"
-arguments = ["img", "--transition-type", "center"]
-set = true
+[config]
+
+# [config.wallpaper]
+# command = "swww"
+# arguments = ["img", "--transition-type", "center"]
+# set = false
 
 [templates.fuzzel]
 input_path = "./templates/fuzzel.ini"
@@ -41,3 +43,8 @@ output_path = '~/.config/btop/themes/matugen.theme'
 input_path = './templates/hypr.conf'
 output_path = '../hypr/colors.conf'
 post_hook = 'hyprctl reload'
+
+[templates.hyprpanel]
+input_path = './templates/hyprpanel.json'
+output_path = '../hyprpanel/matugen.json'
+post_hook = 'hyprpanel ut ~/.config/hyprpanel/matugen.json'
