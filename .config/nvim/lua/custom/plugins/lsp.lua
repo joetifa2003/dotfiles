@@ -65,7 +65,8 @@ local servers = {
   unocss = {
     filetypes = { 'vue' },
   },
-  hyprls = {}
+  hyprls = {},
+  qmlls = {},
 }
 
 return {
