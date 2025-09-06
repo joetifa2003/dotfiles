@@ -45,7 +45,7 @@ input_path = './templates/hypr.conf'
 output_path = '../hypr/colors.conf'
 post_hook = 'hyprctl reload'
 
-[templates.hyprpanel]
-input_path = './templates/hyprpanel.json'
-output_path = '../hyprpanel/matugen.json'
-post_hook = 'hyprpanel ut ~/.config/hyprpanel/matugen.json'
+[templates.color-scheme]
+input_path = './templates/color-scheme.colors'
+output_path = '~/.local/share/color-schemes/Matugen.colors'
+post_hook = 'plasma-apply-colorscheme BreezeDark && plasma-apply-colorscheme Matugen'
