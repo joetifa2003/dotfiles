@@ -49,3 +49,8 @@ post_hook = 'hyprctl reload'
 input_path = './templates/color-scheme.colors'
 output_path = '~/.local/share/color-schemes/Matugen.colors'
 post_hook = 'plasma-apply-colorscheme BreezeDark && plasma-apply-colorscheme Matugen'
+
+[templates.spicetify]
+input_path = './templates/spicetigy-colors.ini'
+output_path = '~/.config/spicetify/Themes/text/color.ini'
+post_hook = 'sleep 1; ~/.spicetify/spicetify refresh'
