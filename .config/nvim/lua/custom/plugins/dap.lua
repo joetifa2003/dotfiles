@@ -61,7 +61,7 @@ return {
     local dapGo = require 'dap-go'
     dapGo.setup {
       delve = {
-        build_flags = '-tags=integration',
+        build_flags = {'-tags=integration'},
       },
     }
 

@@ -1,3 +1,5 @@
+local ignoreIndent = { "jsonnet" }
+
 return { -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
   lazy = false,
@@ -5,10 +7,12 @@ return { -- Highlight, edit, and navigate code
   build = ':TSUpdate',
   config = function()
     vim.api.nvim_create_autocmd('FileType', {
-      pattern = { 'go', 'javascript', 'typescript', 'typescriptreact', 'json', 'markdown', 'hyprlang', 'jsonc' },
+      pattern = { 'go', 'javascript', 'typescript', 'typescriptreact', 'json', 'markdown', 'hyprlang', 'jsonc', 'cue', 'jsonnet' },
       callback = function()
         vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        if not vim.tbl_contains(ignoreIndent, vim.bo.filetype) then
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end
         vim.treesitter.start()
       end,
     })
