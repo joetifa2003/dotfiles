@@ -54,3 +54,7 @@ post_hook = 'plasma-apply-colorscheme BreezeDark && plasma-apply-colorscheme Mat
 input_path = './templates/spicetigy-colors.ini'
 output_path = '~/.config/spicetify/Themes/text/color.ini'
 post_hook = 'sleep 1; ~/.spicetify/spicetify refresh'
+
+[templates.ignis]
+input_path = './templates/colors.scss'
+output_path = '~/.config/ignis/colors.scss'
