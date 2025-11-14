@@ -20,7 +20,7 @@ return {
       sections = {
         {
           section = 'terminal',
-          cmd = 'chafa ~/dotfiles/wallpapers/ign_colorful.png --format symbols --symbols vhalf --size 60x20 --stretch; sleep .1',
+          cmd = 'chafa ~/dotfiles/wallpapers/002.jpg --format symbols --symbols vhalf --size 60x20 --stretch; sleep .1',
           height = 17,
           padding = 2,
         },
