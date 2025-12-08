@@ -41,6 +41,7 @@ return { -- Autoformat
       html = { 'prettierd' },
       vue = { 'prettierd' },
       jsonc = { 'prettierd' },
+      python = { 'black' },
     },
   },
 }
