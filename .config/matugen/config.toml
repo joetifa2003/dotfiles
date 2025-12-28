@@ -48,8 +48,12 @@ post_hook = 'plasma-apply-colorscheme BreezeDark && plasma-apply-colorscheme Mat
 [templates.spicetify]
 input_path = '~/.config/matugen/templates/spicetigy-colors.ini'
 output_path = '~/.config/spicetify/Themes/text/color.ini'
-post_hook = 'sleep 1; ~/.spicetify/spicetify refresh'
+post_hook = '(sleep 1; ~/.spicetify/spicetify refresh) &'
 
 [templates.vesktop]
 input_path = '~/.config/matugen/templates/midnight-discord.css'
 output_path = '~/.config/vesktop/themes/midnight-discord.css'
+
+[templates.zen]
+input_path = '~/.config/matugen/templates/zen.css'
+output_path = '~/.var/app/app.zen_browser.zen/.zen/1106fjd9/chrome/userChrome.css'

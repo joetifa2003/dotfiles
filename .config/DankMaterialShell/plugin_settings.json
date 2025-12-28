@@ -1,0 +1,13 @@
+{
+  "emojiLauncher": {
+    "enabled": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  },
+  "webSearch": {
+    "enabled": true,
+    "searchEngines": []
+  }
+}
