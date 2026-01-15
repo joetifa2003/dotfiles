@@ -16,29 +16,11 @@ return {
         dimInactive = false,
         terminalColors = true, -- define vim.g.terminal_color_{0,17}
         overrides = function()
-          return {
-            BlinkCmpMenu = { bg = '#12120f' },
-          }
+          return {}
         end,
       }
 
       vim.cmd.colorscheme 'kanagawa-dragon'
     end,
   },
-  -- {
-  --   'thesimonho/kanagawa-paper.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   init = function()
-  --     vim.cmd.colorscheme 'kanagawa-paper-ink'
-  --   end,
-  --   opts = {
-  --     transparent = true,
-  --     overrides = function()
-  --       return {
-  --         BlinkCmpMenu = { bg = '#12120f' },
-  --       }
-  --     end,
-  --   },
-  -- },
 }

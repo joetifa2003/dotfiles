@@ -3,22 +3,29 @@
   "currentThemeCategory": "generic",
   "customThemeFile": "",
   "registryThemeVariants": {},
-  "matugenScheme": "scheme-content",
+  "matugenScheme": "scheme-fidelity",
   "runUserMatugenTemplates": true,
   "matugenTargetMonitor": "",
   "popupTransparency": 1,
   "dockTransparency": 1,
   "widgetBackgroundColor": "sch",
   "widgetColorMode": "default",
-  "cornerRadius": 12,
+  "cornerRadius": 11,
   "niriLayoutGapsOverride": -1,
   "niriLayoutRadiusOverride": -1,
+  "niriLayoutBorderSize": -1,
+  "hyprlandLayoutGapsOverride": -1,
+  "hyprlandLayoutRadiusOverride": -1,
+  "hyprlandLayoutBorderSize": -1,
+  "mangoLayoutGapsOverride": -1,
+  "mangoLayoutRadiusOverride": -1,
+  "mangoLayoutBorderSize": -1,
   "use24HourClock": false,
   "showSeconds": false,
   "useFahrenheit": false,
   "nightModeEnabled": false,
   "animationSpeed": 4,
-  "customAnimationDuration": 99,
+  "customAnimationDuration": 120,
   "wallpaperFillMode": "Fill",
   "blurredWallpaperLayer": false,
   "blurWallpaperOnOverview": false,
@@ -51,6 +58,7 @@
   "controlCenterShowMicPercent": false,
   "controlCenterShowBatteryIcon": false,
   "controlCenterShowPrinterIcon": false,
+  "controlCenterShowScreenSharingIcon": true,
   "showPrivacyButton": true,
   "privacyShowMicIcon": false,
   "privacyShowCameraIcon": false,
@@ -98,41 +106,91 @@
     }
   ],
   "showWorkspaceIndex": true,
+  "showWorkspaceName": false,
   "showWorkspacePadding": true,
   "workspaceScrolling": false,
   "showWorkspaceApps": true,
   "maxWorkspaceIcons": 1,
-  "workspacesPerMonitor": true,
+  "groupWorkspaceApps": true,
+  "workspaceFollowFocus": false,
   "showOccupiedWorkspacesOnly": false,
+  "reverseScrolling": false,
   "dwlShowAllTags": false,
+  "workspaceColorMode": "default",
+  "workspaceUnfocusedColorMode": "default",
+  "workspaceUrgentColorMode": "default",
+  "workspaceFocusedBorderEnabled": false,
+  "workspaceFocusedBorderColor": "primary",
+  "workspaceFocusedBorderThickness": 2,
   "workspaceNameIcons": {},
   "waveProgressEnabled": true,
   "scrollTitleEnabled": true,
   "audioVisualizerEnabled": true,
-  "audioScrollEnabled": true,
+  "audioScrollMode": "volume",
   "clockCompactMode": false,
   "focusedWindowCompactMode": false,
   "runningAppsCompactMode": true,
   "keyboardLayoutNameCompactMode": false,
   "runningAppsCurrentWorkspace": false,
-  "runningAppsGroupByApp": false,
+  "runningAppsGroupByApp": true,
+  "appIdSubstitutions": [
+    {
+      "pattern": "Spotify",
+      "replacement": "spotify",
+      "type": "exact"
+    },
+    {
+      "pattern": "beepertexts",
+      "replacement": "beeper",
+      "type": "exact"
+    },
+    {
+      "pattern": "home assistant desktop",
+      "replacement": "homeassistant-desktop",
+      "type": "exact"
+    },
+    {
+      "pattern": "com.transmissionbt.transmission",
+      "replacement": "transmission-gtk",
+      "type": "contains"
+    },
+    {
+      "pattern": "^steam_app_(\\d+)$",
+      "replacement": "steam_icon_$1",
+      "type": "regex"
+    }
+  ],
   "centeringMode": "index",
-  "clockDateFormat": "",
+  "clockDateFormat": "ddd MMM d",
   "lockDateFormat": "",
   "mediaSize": 1,
   "appLauncherViewMode": "list",
-  "spotlightModalViewMode": "grid",
+  "spotlightModalViewMode": "list",
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 5,
   "spotlightCloseNiriOverview": true,
   "niriOverviewOverlayEnabled": true,
-  "weatherLocation": "القاهرة",
-  "weatherCoordinates": "30.0443879,31.2357257",
-  "useAutoLocation": true,
+  "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "wifi",
   "vpnLastConnected": "",
   "iconTheme": "System Default",
+  "cursorSettings": {
+    "theme": "System Default",
+    "size": 24,
+    "niri": {
+      "hideWhenTyping": false,
+      "hideAfterInactiveMs": 0
+    },
+    "hyprland": {
+      "hideOnKeyPress": false,
+      "hideOnTouch": false,
+      "inactiveTimeout": 0
+    },
+    "dwl": {
+      "cursorHideTimeout": 0
+    }
+  },
   "launcherLogoMode": "custom",
   "launcherLogoCustomPath": "/home/joetifa/dotfiles/ankh.png",
   "launcherLogoColorOverride": "primary",
@@ -140,9 +198,9 @@
   "launcherLogoBrightness": 0.5,
   "launcherLogoContrast": 1,
   "launcherLogoSizeOffset": 2,
-  "fontFamily": "Inter Variable",
-  "monoFontFamily": "Fira Code",
-  "fontWeight": 400,
+  "fontFamily": "JetBrainsMono NF",
+  "monoFontFamily": "JetBrainsMono NF",
+  "fontWeight": 500,
   "fontScale": 1,
   "notepadUseMonospace": true,
   "notepadFontFamily": "",
@@ -170,6 +228,8 @@
   "loginctlLockIntegration": true,
   "fadeToLockEnabled": false,
   "fadeToLockGracePeriod": 5,
+  "fadeToDpmsEnabled": true,
+  "fadeToDpmsGracePeriod": 5,
   "launchPrefix": "",
   "brightnessDevicePins": {},
   "wifiNetworkPins": {
@@ -182,24 +242,27 @@
   "qtThemingEnabled": false,
   "syncModeWithPortal": true,
   "terminalsAlwaysDark": false,
-  "runDmsMatugenTemplates": false,
-  "matugenTemplateGtk": true,
-  "matugenTemplateNiri": true,
-  "matugenTemplateQt5ct": true,
-  "matugenTemplateQt6ct": true,
-  "matugenTemplateFirefox": true,
-  "matugenTemplatePywalfox": true,
-  "matugenTemplateVesktop": true,
-  "matugenTemplateEquibop": true,
-  "matugenTemplateGhostty": true,
-  "matugenTemplateKitty": true,
-  "matugenTemplateFoot": true,
-  "matugenTemplateAlacritty": true,
-  "matugenTemplateNeovim": true,
-  "matugenTemplateWezterm": true,
+  "runDmsMatugenTemplates": true,
+  "matugenTemplateGtk": false,
+  "matugenTemplateNiri": false,
+  "matugenTemplateHyprland": false,
+  "matugenTemplateMangowc": false,
+  "matugenTemplateQt5ct": false,
+  "matugenTemplateQt6ct": false,
+  "matugenTemplateFirefox": false,
+  "matugenTemplatePywalfox": false,
+  "matugenTemplateZenBrowser": true,
+  "matugenTemplateVesktop": false,
+  "matugenTemplateEquibop": false,
+  "matugenTemplateGhostty": false,
+  "matugenTemplateKitty": false,
+  "matugenTemplateFoot": false,
+  "matugenTemplateAlacritty": false,
+  "matugenTemplateNeovim": false,
+  "matugenTemplateWezterm": false,
   "matugenTemplateDgop": true,
-  "matugenTemplateKcolorscheme": true,
-  "matugenTemplateVscode": true,
+  "matugenTemplateKcolorscheme": false,
+  "matugenTemplateVscode": false,
   "showDock": false,
   "dockAutoHide": false,
   "dockGroupByApp": false,
@@ -227,11 +290,19 @@
   "maxFprintTries": 3,
   "lockScreenActiveMonitor": "all",
   "lockScreenInactiveColor": "#000000",
+  "lockScreenNotificationMode": 0,
   "hideBrightnessSlider": false,
   "notificationTimeoutLow": 5000,
   "notificationTimeoutNormal": 5000,
   "notificationTimeoutCritical": 0,
+  "notificationCompactMode": false,
   "notificationPopupPosition": 0,
+  "notificationHistoryEnabled": true,
+  "notificationHistoryMaxCount": 50,
+  "notificationHistoryMaxAgeDays": 7,
+  "notificationHistorySaveLow": true,
+  "notificationHistorySaveNormal": true,
+  "notificationHistorySaveCritical": true,
   "osdAlwaysShowValue": true,
   "osdPosition": 7,
   "osdVolumeEnabled": true,
@@ -268,11 +339,23 @@
   "screenPreferences": {
     "wallpaper": [
       "all"
+    ],
+    "dock": [
+      "all"
     ]
   },
-  "showOnLastDisplay": {},
+  "showOnLastDisplay": {
+    "dock": true
+  },
   "niriOutputSettings": {},
-  "hyprlandOutputSettings": {},
+  "hyprlandOutputSettings": {
+    "HDMI-A-1": {
+      "colorManagement": "auto"
+    },
+    "eDP-1": {
+      "bitdepth": 10
+    }
+  },
   "barConfigs": [
     {
       "id": "default",
@@ -300,12 +383,12 @@
       "centerWidgets": [
         {
           "id": "clock",
-          "enabled": true,
-          "clockCompactMode": false
+          "enabled": true
         },
         {
           "id": "music",
-          "enabled": true
+          "enabled": true,
+          "mediaSize": 1
         },
         {
           "id": "weather",
@@ -313,6 +396,10 @@
         }
       ],
       "rightWidgets": [
+        {
+          "id": "dankPomodoroTimer",
+          "enabled": true
+        },
         {
           "id": "systemTray",
           "enabled": true
@@ -326,6 +413,10 @@
           "enabled": true
         },
         {
+          "id": "network_speed_monitor",
+          "enabled": true
+        },
+        {
           "id": "cpuTemp",
           "enabled": true
         },
@@ -335,9 +426,7 @@
         },
         {
           "id": "memUsage",
-          "enabled": true,
-          "showSwap": false,
-          "minimumWidth": true
+          "enabled": true
         },
         {
           "id": "notificationButton",
@@ -486,7 +575,7 @@
       },
       "positions": {
         "HDMI-A-1": {
-          "x": 2120,
+          "x": 2160,
           "y": 1040,
           "width": 360,
           "height": 360
@@ -506,12 +595,35 @@
       "positions": {
         "HDMI-A-1": {
           "x": 40,
-          "y": 1240,
+          "y": 1120,
           "width": 360,
           "height": 160
         }
       }
+    },
+    {
+      "id": "dw_1767021939979_zuighiujh",
+      "widgetType": "dankDesktopWeather",
+      "name": "Dank Desktop Weather",
+      "enabled": true,
+      "config": {
+        "displayPreferences": [
+          "all"
+        ],
+        "showOnOverlay": false,
+        "viewMode": "standard"
+      },
+      "positions": {
+        "HDMI-A-1": {
+          "x": 40,
+          "y": 1280,
+          "width": 360,
+          "height": 120
+        }
+      }
     }
   ],
-  "configVersion": 4
+  "desktopWidgetGroups": [],
+  "builtInPluginSettings": {},
+  "configVersion": 5
 }

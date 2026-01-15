@@ -9,5 +9,11 @@
   "webSearch": {
     "enabled": true,
     "searchEngines": []
+  },
+  "dankPomodoroTimer": {
+    "enabled": true
+  },
+  "powerUsagePlugin": {
+    "enabled": true
   }
 }
