@@ -126,5 +126,13 @@ return {
         Snacks.notifier.show_history()
       end,
     },
+
+    {
+      '<leader>.',
+      function()
+        Snacks.scratch()
+      end,
+      desc = 'Toggle Scratch Buffer',
+    },
   },
 }

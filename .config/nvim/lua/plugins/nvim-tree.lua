@@ -34,9 +34,9 @@ return {
           }
         end,
       },
-      width = function()
-        return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
-      end,
+      -- width = function()
+      --   return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
+      -- end,
     },
     git = {
       enable = true,
@@ -56,10 +56,6 @@ return {
     update_focused_file = {
       enable = true,
     },
-
-    -- view = {
-    -- 	side = "right",
-    -- },
 
     on_attach = function(bufnr)
       local api = require 'nvim-tree.api'

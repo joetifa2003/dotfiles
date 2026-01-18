@@ -25,6 +25,7 @@ return { -- Highlight, edit, and navigate code
         'astro',
         'typespec',
         'python',
+        'lua',
       },
       callback = function()
         vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'

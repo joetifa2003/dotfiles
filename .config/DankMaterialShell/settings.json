@@ -243,12 +243,12 @@
   "syncModeWithPortal": true,
   "terminalsAlwaysDark": false,
   "runDmsMatugenTemplates": true,
-  "matugenTemplateGtk": false,
+  "matugenTemplateGtk": true,
   "matugenTemplateNiri": false,
   "matugenTemplateHyprland": false,
   "matugenTemplateMangowc": false,
-  "matugenTemplateQt5ct": false,
-  "matugenTemplateQt6ct": false,
+  "matugenTemplateQt5ct": true,
+  "matugenTemplateQt6ct": true,
   "matugenTemplateFirefox": false,
   "matugenTemplatePywalfox": false,
   "matugenTemplateZenBrowser": true,
@@ -261,7 +261,7 @@
   "matugenTemplateNeovim": false,
   "matugenTemplateWezterm": false,
   "matugenTemplateDgop": true,
-  "matugenTemplateKcolorscheme": false,
+  "matugenTemplateKcolorscheme": true,
   "matugenTemplateVscode": false,
   "showDock": false,
   "dockAutoHide": false,
@@ -396,10 +396,6 @@
         }
       ],
       "rightWidgets": [
-        {
-          "id": "dankPomodoroTimer",
-          "enabled": true
-        },
         {
           "id": "systemTray",
           "enabled": true
@@ -579,6 +575,12 @@
           "y": 1040,
           "width": 360,
           "height": 360
+        },
+        "eDP-1": {
+          "width": 320,
+          "height": 480,
+          "x": 864,
+          "y": 400
         }
       }
     },
