@@ -103,6 +103,18 @@
       "id": "darkMode",
       "enabled": true,
       "width": 50
+    },
+    {
+      "id": "inputVolumeSlider",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "diskUsage",
+      "enabled": true,
+      "width": 50,
+      "instanceId": "mkputhop6jky8kj78ac4twv9xttg4a",
+      "mountPath": "/"
     }
   ],
   "showWorkspaceIndex": true,
@@ -117,6 +129,7 @@
   "reverseScrolling": false,
   "dwlShowAllTags": false,
   "workspaceColorMode": "default",
+  "workspaceOccupiedColorMode": "none",
   "workspaceUnfocusedColorMode": "default",
   "workspaceUrgentColorMode": "default",
   "workspaceFocusedBorderEnabled": false,
@@ -169,7 +182,16 @@
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 5,
   "spotlightCloseNiriOverview": true,
+  "spotlightSectionViewModes": {
+    "apps": "list"
+  },
+  "appDrawerSectionViewModes": {},
   "niriOverviewOverlayEnabled": true,
+  "dankLauncherV2Size": "compact",
+  "dankLauncherV2BorderEnabled": false,
+  "dankLauncherV2BorderThickness": 2,
+  "dankLauncherV2BorderColor": "primary",
+  "dankLauncherV2ShowFooter": true,
   "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "wifi",
@@ -263,8 +285,10 @@
   "matugenTemplateDgop": true,
   "matugenTemplateKcolorscheme": true,
   "matugenTemplateVscode": false,
+  "matugenTemplateEmacs": true,
   "showDock": false,
   "dockAutoHide": false,
+  "dockSmartAutoHide": false,
   "dockGroupByApp": false,
   "dockOpenOnOverview": false,
   "dockPosition": 1,
@@ -286,6 +310,7 @@
   "lockScreenShowDate": true,
   "lockScreenShowProfileImage": true,
   "lockScreenShowPasswordField": true,
+  "lockScreenPowerOffMonitorsOnLock": false,
   "enableFprint": false,
   "maxFprintTries": 3,
   "lockScreenActiveMonitor": "all",
@@ -352,9 +377,7 @@
     "HDMI-A-1": {
       "colorManagement": "auto"
     },
-    "eDP-1": {
-      "bitdepth": 10
-    }
+    "eDP-1": {}
   },
   "barConfigs": [
     {
@@ -397,15 +420,15 @@
       ],
       "rightWidgets": [
         {
-          "id": "systemTray",
-          "enabled": true
-        },
-        {
           "id": "colorPicker",
           "enabled": true
         },
         {
           "id": "clipboard",
+          "enabled": true
+        },
+        {
+          "id": "systemTray",
           "enabled": true
         },
         {
@@ -537,6 +560,9 @@
     "HDMI-A-1": {
       "enabled": true,
       "size": 40
+    },
+    "eDP-1": {
+      "enabled": true
     }
   },
   "desktopWidgetInstances": [
@@ -577,10 +603,16 @@
           "height": 360
         },
         "eDP-1": {
-          "width": 320,
+          "width": 360,
           "height": 480,
-          "x": 864,
-          "y": 400
+          "x": 1640,
+          "y": 760
+        },
+        "": {
+          "width": 160,
+          "height": 180,
+          "x": 0,
+          "y": 0
         }
       }
     },
@@ -600,6 +632,18 @@
           "y": 1120,
           "width": 360,
           "height": 160
+        },
+        "eDP-1": {
+          "width": 320,
+          "height": 160,
+          "x": 40,
+          "y": 960
+        },
+        "": {
+          "width": 320,
+          "height": 160,
+          "x": 0,
+          "y": 0
         }
       }
     },
@@ -621,11 +665,25 @@
           "y": 1280,
           "width": 360,
           "height": 120
+        },
+        "eDP-1": {
+          "width": 320,
+          "height": 120,
+          "x": 40,
+          "y": 1120
+        },
+        "": {
+          "width": 140,
+          "height": 100,
+          "x": 0,
+          "y": 0
         }
       }
     }
   ],
   "desktopWidgetGroups": [],
   "builtInPluginSettings": {},
+  "launcherPluginVisibility": {},
+  "launcherPluginOrder": [],
   "configVersion": 5
 }

@@ -1,6 +1,6 @@
 return {
   {
-    'rtamojus/mellifluous.nvim',
+    'ramojus/mellifluous.nvim',
     priority = 10000,
     config = function()
       require('mellifluous').setup {} -- optional, see configuration section.

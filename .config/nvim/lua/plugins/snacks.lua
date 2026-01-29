@@ -31,6 +31,10 @@ return {
       },
     },
   },
+  config = function(_, opts)
+    require('snacks').setup(opts)
+    Snacks.words.enable()
+  end,
   keys = {
     {
       '<leader>fw',

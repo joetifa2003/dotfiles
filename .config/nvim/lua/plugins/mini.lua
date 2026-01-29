@@ -2,6 +2,7 @@ return {
   {
     'echasnovski/mini.nvim',
     config = function()
+      require('mini.sessions').setup()
       require('mini.comment').setup()
 
       local statusline = require 'mini.statusline'
