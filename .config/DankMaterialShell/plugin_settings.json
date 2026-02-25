@@ -8,12 +8,21 @@
   },
   "webSearch": {
     "enabled": true,
-    "searchEngines": []
+    "searchEngines": [],
+    "noTrigger": false,
+    "trigger": "?",
+    "disabledEngines": []
   },
   "dankPomodoroTimer": {
     "enabled": true
   },
   "powerUsagePlugin": {
+    "enabled": true
+  },
+  "dankHyprlandWindows": {
+    "enabled": true
+  },
+  "dankGifSearch": {
     "enabled": true
   }
 }
