@@ -12,7 +12,7 @@
   "widgetColorMode": "default",
   "controlCenterTileColorMode": "primary",
   "buttonColorMode": "primary",
-  "cornerRadius": 11,
+  "cornerRadius": 8,
   "niriLayoutGapsOverride": -1,
   "niriLayoutRadiusOverride": -1,
   "niriLayoutBorderSize": -1,
@@ -22,6 +22,8 @@
   "mangoLayoutGapsOverride": -1,
   "mangoLayoutRadiusOverride": -1,
   "mangoLayoutBorderSize": -1,
+  "firstDayOfWeek": -1,
+  "showWeekNumber": false,
   "use24HourClock": false,
   "showSeconds": false,
   "padHours12Hour": false,
@@ -36,6 +38,15 @@
   "modalAnimationSpeed": 1,
   "modalCustomAnimationDuration": 150,
   "enableRippleEffects": true,
+  "m3ElevationEnabled": true,
+  "m3ElevationIntensity": 12,
+  "m3ElevationOpacity": 30,
+  "m3ElevationColorMode": "default",
+  "m3ElevationLightDirection": "top",
+  "m3ElevationCustomColor": "#000000",
+  "modalElevationEnabled": true,
+  "popoutElevationEnabled": true,
+  "barElevationEnabled": false,
   "wallpaperFillMode": "Fill",
   "blurredWallpaperLayer": false,
   "blurWallpaperOnOverview": false,
@@ -140,6 +151,7 @@
   "showOccupiedWorkspacesOnly": false,
   "reverseScrolling": false,
   "dwlShowAllTags": false,
+  "workspaceActiveAppHighlightEnabled": false,
   "workspaceColorMode": "default",
   "workspaceOccupiedColorMode": "none",
   "workspaceUnfocusedColorMode": "default",
@@ -199,6 +211,17 @@
   "centeringMode": "index",
   "clockDateFormat": "ddd MMM d",
   "lockDateFormat": "",
+  "greeterRememberLastSession": true,
+  "greeterRememberLastUser": true,
+  "greeterEnableFprint": false,
+  "greeterEnableU2f": false,
+  "greeterWallpaperPath": "",
+  "greeterUse24HourClock": true,
+  "greeterShowSeconds": false,
+  "greeterPadHours12Hour": false,
+  "greeterLockDateFormat": "",
+  "greeterFontFamily": "",
+  "greeterWallpaperFillMode": "",
   "mediaSize": 1,
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
@@ -291,6 +314,10 @@
   "qtThemingEnabled": false,
   "syncModeWithPortal": true,
   "terminalsAlwaysDark": false,
+  "muxType": "tmux",
+  "muxUseCustomCommand": false,
+  "muxCustomCommand": "",
+  "muxSessionFilter": "",
   "runDmsMatugenTemplates": true,
   "matugenTemplateGtk": true,
   "matugenTemplateNiri": false,
@@ -313,10 +340,22 @@
   "matugenTemplateKcolorscheme": true,
   "matugenTemplateVscode": false,
   "matugenTemplateEmacs": true,
+  "matugenTemplateZed": true,
+  "matugenTemplateNeovimSettings": {
+    "dark": {
+      "baseTheme": "github_dark",
+      "harmony": 0.5
+    },
+    "light": {
+      "baseTheme": "github_light",
+      "harmony": 0.5
+    }
+  },
   "showDock": false,
   "dockAutoHide": false,
   "dockSmartAutoHide": false,
   "dockGroupByApp": false,
+  "dockRestoreSpecialWorkspaceOnClick": false,
   "dockOpenOnOverview": false,
   "dockPosition": 1,
   "dockSpacing": 4,
@@ -354,9 +393,14 @@
   "lockAtStartup": false,
   "enableFprint": false,
   "maxFprintTries": 3,
+  "enableU2f": false,
+  "u2fMode": "or",
   "lockScreenActiveMonitor": "all",
   "lockScreenInactiveColor": "#000000",
   "lockScreenNotificationMode": 0,
+  "lockScreenVideoEnabled": false,
+  "lockScreenVideoPath": "",
+  "lockScreenVideoCycling": false,
   "hideBrightnessSlider": false,
   "notificationTimeoutLow": 5000,
   "notificationTimeoutNormal": 5000,
@@ -371,7 +415,17 @@
   "notificationHistorySaveLow": true,
   "notificationHistorySaveNormal": true,
   "notificationHistorySaveCritical": true,
-  "notificationRules": [],
+  "notificationRules": [
+    {
+      "enabled": true,
+      "field": "appName",
+      "pattern": "Crash Reporting System",
+      "matchType": "exact",
+      "action": "ignore",
+      "urgency": "default"
+    }
+  ],
+  "notificationFocusedMonitor": false,
   "osdAlwaysShowValue": true,
   "osdPosition": 7,
   "osdVolumeEnabled": true,
@@ -626,21 +680,21 @@
       "enabled": true,
       "config": {
         "showHeader": true,
-        "transparency": 0.8,
+        "transparency": 0.7,
         "colorMode": "primary",
         "customColor": "#ffffff",
         "showCpu": true,
         "showCpuGraph": true,
         "showCpuTemp": true,
-        "showGpuTemp": false,
-        "gpuPciId": "",
+        "showGpuTemp": true,
+        "gpuPciId": "10de:24dd",
         "showMemory": true,
         "showMemoryGraph": true,
         "showNetwork": true,
         "showNetworkGraph": true,
         "showDisk": true,
         "showTopProcesses": true,
-        "topProcessCount": 3,
+        "topProcessCount": 5,
         "topProcessSortBy": "cpu",
         "layoutMode": "auto",
         "graphInterval": 60,
@@ -667,38 +721,8 @@
           "x": 0,
           "y": 0
         }
-      }
-    },
-    {
-      "id": "dw_1766801573504_n4lm2t1qa",
-      "widgetType": "mediaPlayer",
-      "name": "Media Player",
-      "enabled": true,
-      "config": {
-        "displayPreferences": [
-          "all"
-        ]
       },
-      "positions": {
-        "HDMI-A-1": {
-          "x": 40,
-          "y": 1120,
-          "width": 360,
-          "height": 160
-        },
-        "eDP-1": {
-          "width": 320,
-          "height": 160,
-          "x": 40,
-          "y": 960
-        },
-        "": {
-          "width": 320,
-          "height": 160,
-          "x": 0,
-          "y": 0
-        }
-      }
+      "group": null
     },
     {
       "id": "dw_1767021939979_zuighiujh",
@@ -710,7 +734,8 @@
           "all"
         ],
         "showOnOverlay": false,
-        "viewMode": "standard"
+        "viewMode": "standard",
+        "backgroundOpacity": 70
       },
       "positions": {
         "HDMI-A-1": {
@@ -732,9 +757,50 @@
           "y": 0
         }
       }
+    },
+    {
+      "id": "dw_1773869062763_8aq9tx0qi",
+      "widgetType": "cavaVisualizer",
+      "name": "Cava Visualizer",
+      "enabled": true,
+      "config": {
+        "displayPreferences": [
+          "all"
+        ],
+        "vizMode": "bars",
+        "barSpacing": 4,
+        "barCount": 20,
+        "barWidth": 0,
+        "orientation": "bottom",
+        "sensitivity": 119,
+        "channels": "stereo",
+        "bgOpacity": 0,
+        "opacity": 100,
+        "silenceTimeout": 10
+      },
+      "positions": {
+        "eDP-1": {
+          "width": 320,
+          "height": 120,
+          "x": 40,
+          "y": 1000
+        },
+        "HDMI-A-1": {
+          "width": 360,
+          "height": 160,
+          "x": 40,
+          "y": 1120
+        }
+      }
     }
   ],
-  "desktopWidgetGroups": [],
+  "desktopWidgetGroups": [
+    {
+      "id": "dwg_1773869874423_ow3vct59e",
+      "name": "main",
+      "collapsed": false
+    }
+  ],
   "builtInPluginSettings": {
     "dms_settings_search": {
       "trigger": "@"
