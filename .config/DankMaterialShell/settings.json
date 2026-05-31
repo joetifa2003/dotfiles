@@ -50,7 +50,7 @@
   "modalElevationEnabled": true,
   "popoutElevationEnabled": true,
   "barElevationEnabled": false,
-  "blurEnabled": false,
+  "blurEnabled": true,
   "blurForegroundLayers": true,
   "blurLayerOutlineOpacity": 0.12,
   "blurBorderColor": "outline",
