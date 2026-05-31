@@ -20,7 +20,7 @@ output_path = '~/.config/btop/themes/matugen.theme'
 
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hypr.conf'
-output_path = '~/.config/hypr/colors.conf'
+output_path = '~/.config/hypr/colors.lua'
 post_hook = 'hyprctl reload'
 
 [templates.spicetify]
