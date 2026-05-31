@@ -35,3 +35,8 @@ output_path = '~/.config/vesktop/themes/midnight-discord.css'
 [templates.opencode]
 input_path = '~/.config/matugen/templates/opencode.json'
 output_path = '~/.config/opencode/themes/matugen.json'
+
+[templates.nvim]
+input_path = '~/.config/matugen/templates/template.lua'
+output_path = '~/.config/nvim/matugen.lua'
+post_hook = 'pkill -SIGUSR1 nvim'

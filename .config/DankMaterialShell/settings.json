@@ -4,6 +4,7 @@
   "customThemeFile": "",
   "registryThemeVariants": {},
   "matugenScheme": "scheme-fidelity",
+  "matugenContrast": 0,
   "runUserMatugenTemplates": true,
   "matugenTargetMonitor": "",
   "popupTransparency": 1,
@@ -38,6 +39,8 @@
   "modalAnimationSpeed": 1,
   "modalCustomAnimationDuration": 150,
   "enableRippleEffects": true,
+  "animationVariant": 0,
+  "motionEffect": 0,
   "m3ElevationEnabled": true,
   "m3ElevationIntensity": 12,
   "m3ElevationOpacity": 30,
@@ -47,6 +50,12 @@
   "modalElevationEnabled": true,
   "popoutElevationEnabled": true,
   "barElevationEnabled": false,
+  "blurEnabled": false,
+  "blurForegroundLayers": true,
+  "blurLayerOutlineOpacity": 0.12,
+  "blurBorderColor": "outline",
+  "blurBorderCustomColor": "#ffffff",
+  "blurBorderOpacity": 0.35,
   "wallpaperFillMode": "Fill",
   "blurredWallpaperLayer": false,
   "blurWallpaperOnOverview": false,
@@ -63,6 +72,9 @@
   "selectedGpuIndex": 0,
   "enabledGpuPciIds": [],
   "showSystemTray": true,
+  "systemTrayIconTintMode": "none",
+  "systemTrayIconTintSaturation": 50,
+  "systemTrayIconTintStrength": 135,
   "showClock": true,
   "showNotificationButton": true,
   "showBattery": true,
@@ -162,11 +174,13 @@
   "workspaceNameIcons": {},
   "waveProgressEnabled": true,
   "scrollTitleEnabled": true,
+  "mediaAdaptiveWidthEnabled": true,
   "audioVisualizerEnabled": true,
   "audioScrollMode": "volume",
   "audioWheelScrollAmount": 5,
   "clockCompactMode": false,
   "focusedWindowCompactMode": false,
+  "focusedWindowSize": 1,
   "runningAppsCompactMode": true,
   "barMaxVisibleApps": 0,
   "barMaxVisibleRunningApps": 0,
@@ -232,6 +246,8 @@
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 5,
   "spotlightCloseNiriOverview": true,
+  "rememberLastQuery": false,
+  "rememberLastMode": true,
   "spotlightSectionViewModes": {
     "apps": "list"
   },
@@ -243,6 +259,11 @@
   "dankLauncherV2BorderColor": "primary",
   "dankLauncherV2ShowFooter": true,
   "dankLauncherV2UnloadOnClose": false,
+  "dankLauncherV2IncludeFilesInAll": false,
+  "dankLauncherV2IncludeFoldersInAll": false,
+  "launcherUseOverlayLayer": false,
+  "launcherStyle": "full",
+  "spotlightBarShowModeChips": false,
   "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "wifi",
@@ -274,6 +295,8 @@
   "monoFontFamily": "JetBrainsMono NF",
   "fontWeight": 500,
   "fontScale": 1,
+  "textRenderType": 0,
+  "textRenderQuality": 0,
   "notepadUseMonospace": true,
   "notepadFontFamily": "",
   "notepadFontSize": 14,
@@ -282,6 +305,7 @@
   "notepadLastCustomTransparency": 0.7,
   "soundsEnabled": true,
   "useSystemSoundTheme": false,
+  "soundLogin": false,
   "soundNewNotification": true,
   "soundVolumeChanged": true,
   "soundPluggedIn": true,
@@ -290,11 +314,13 @@
   "acSuspendTimeout": 0,
   "acSuspendBehavior": 0,
   "acProfileName": "",
+  "acPostLockMonitorTimeout": 0,
   "batteryMonitorTimeout": 0,
   "batteryLockTimeout": 0,
   "batterySuspendTimeout": 0,
   "batterySuspendBehavior": 0,
   "batteryProfileName": "",
+  "batteryPostLockMonitorTimeout": 0,
   "batteryChargeLimit": 100,
   "lockBeforeSuspend": false,
   "loginctlLockIntegration": true,
@@ -329,6 +355,7 @@
   "matugenTemplatePywalfox": false,
   "matugenTemplateZenBrowser": true,
   "matugenTemplateVesktop": false,
+  "matugenTemplateVencord": true,
   "matugenTemplateEquibop": false,
   "matugenTemplateGhostty": false,
   "matugenTemplateKitty": false,
@@ -351,9 +378,11 @@
       "harmony": 0.5
     }
   },
+  "matugenTemplateNeovimSetBackground": true,
   "showDock": false,
   "dockAutoHide": false,
   "dockSmartAutoHide": false,
+  "dockUseOverlayLayer": false,
   "dockGroupByApp": false,
   "dockRestoreSpecialWorkspaceOnClick": false,
   "dockOpenOnOverview": false,
@@ -378,6 +407,9 @@
   "dockMaxVisibleApps": 0,
   "dockMaxVisibleRunningApps": 0,
   "dockShowOverflowBadge": true,
+  "dockShowTrash": false,
+  "dockTrashFileManager": "default",
+  "dockTrashCustomCommand": "",
   "notificationOverlayEnabled": false,
   "notificationPopupShadowEnabled": true,
   "notificationPopupPrivacyMode": false,
@@ -406,6 +438,7 @@
   "notificationTimeoutNormal": 5000,
   "notificationTimeoutCritical": 0,
   "notificationCompactMode": false,
+  "notificationDedupeEnabled": true,
   "notificationPopupPosition": 0,
   "notificationAnimationSpeed": 1,
   "notificationCustomAnimationDuration": 400,
@@ -456,9 +489,13 @@
   "customPowerActionReboot": "",
   "customPowerActionPowerOff": "",
   "updaterHideWidget": false,
+  "updaterCheckOnStart": false,
   "updaterUseCustomCommand": false,
   "updaterCustomCommand": "",
   "updaterTerminalAdditionalParams": "",
+  "updaterIntervalSeconds": 1800,
+  "updaterIncludeFlatpak": true,
+  "updaterAllowAUR": true,
   "displayNameMode": "system",
   "screenPreferences": {
     "wallpaper": [
@@ -483,6 +520,7 @@
   "displayProfileAutoSelect": false,
   "displayShowDisconnected": false,
   "displaySnapToEdge": true,
+  "connectedFrameBarStyleBackups": {},
   "barConfigs": [
     {
       "id": "default",
@@ -520,17 +558,13 @@
         {
           "id": "weather",
           "enabled": true
-        }
-      ],
-      "rightWidgets": [
+        },
         {
           "id": "colorPicker",
           "enabled": true
-        },
-        {
-          "id": "clipboard",
-          "enabled": true
-        },
+        }
+      ],
+      "rightWidgets": [
         {
           "id": "systemTray",
           "enabled": true
@@ -705,9 +739,9 @@
       "positions": {
         "HDMI-A-1": {
           "x": 2160,
-          "y": 1040,
+          "y": 80,
           "width": 360,
-          "height": 360
+          "height": 480
         },
         "eDP-1": {
           "width": 360,
@@ -790,6 +824,12 @@
           "height": 160,
           "x": 40,
           "y": 1120
+        },
+        "": {
+          "width": 100,
+          "height": 100,
+          "x": 0,
+          "y": 0
         }
       }
     }
@@ -809,5 +849,20 @@
   "clipboardEnterToPaste": false,
   "launcherPluginVisibility": {},
   "launcherPluginOrder": [],
-  "configVersion": 5
+  "frameEnabled": false,
+  "frameThickness": 16,
+  "frameRounding": 23,
+  "frameColor": "",
+  "frameOpacity": 1,
+  "frameScreenPreferences": [
+    "all"
+  ],
+  "frameBarSize": 40,
+  "frameShowOnOverview": false,
+  "frameBlurEnabled": true,
+  "frameCloseGaps": true,
+  "frameLauncherEmergeSide": "bottom",
+  "frameLauncherArcExtender": false,
+  "frameMode": "connected",
+  "configVersion": 11
 }
