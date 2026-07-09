@@ -1,5 +1,27 @@
 return {
   'mrjones2014/smart-splits.nvim',
+  opts = {
+    at_edge = function(ctx)
+      if vim.env.HERDR_ENV ~= '1' or not vim.env.HERDR_PANE_ID then
+        ctx.wrap()
+        return
+      end
+
+      local job_id = vim.fn.jobstart({
+        vim.env.HERDR_BIN_PATH or 'herdr',
+        'pane',
+        'focus',
+        '--direction',
+        ctx.direction,
+        '--pane',
+        vim.env.HERDR_PANE_ID,
+      }, { detach = true })
+
+      if job_id <= 0 then
+        ctx.wrap()
+      end
+    end,
+  },
   keys = {
     {
       '<C-h>',
