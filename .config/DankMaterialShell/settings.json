@@ -56,15 +56,15 @@
   "useFahrenheit": false,
   "windSpeedUnit": "kmh",
   "nightModeEnabled": false,
-  "animationSpeed": 4,
-  "customAnimationDuration": 120,
+  "animationSpeed": 2,
+  "customAnimationDuration": 961,
   "syncComponentAnimationSpeeds": true,
-  "popoutAnimationSpeed": 1,
+  "popoutAnimationSpeed": 0,
   "popoutCustomAnimationDuration": 150,
-  "modalAnimationSpeed": 1,
+  "modalAnimationSpeed": 0,
   "modalCustomAnimationDuration": 150,
   "enableRippleEffects": true,
-  "animationVariant": 0,
+  "animationVariant": 1,
   "motionEffect": 0,
   "m3ElevationEnabled": true,
   "m3ElevationIntensity": 12,
@@ -532,6 +532,8 @@
   "enableU2f": false,
   "u2fMode": "or",
   "lockPamPath": "",
+  "lockScreenSecurityKeyShortcut": "Ctrl+Q",
+  "lockScreenSecurityKeyShortcutEnabled": false,
   "lockPamInlineFprint": false,
   "lockPamInlineU2f": false,
   "lockPamExternallyManaged": false,
@@ -837,7 +839,7 @@
       "enabled": true,
       "config": {
         "showHeader": true,
-        "transparency": 0.7,
+        "transparency": 0.5,
         "colorMode": "primary",
         "customColor": "#ffffff",
         "showCpu": true,
@@ -892,7 +894,7 @@
         ],
         "showOnOverlay": false,
         "viewMode": "standard",
-        "backgroundOpacity": 70
+        "backgroundOpacity": 50
       },
       "positions": {
         "HDMI-A-1": {
@@ -955,6 +957,33 @@
           "y": 0
         }
       }
+    },
+    {
+      "id": "dw_1785848145521_l3z4allgw",
+      "widgetType": "desktopClock",
+      "name": "Desktop Clock",
+      "enabled": true,
+      "config": {
+        "style": "analog",
+        "transparency": 0.8,
+        "colorMode": "primary",
+        "customColor": "#ffffff",
+        "showDate": false,
+        "showAnalogNumbers": false,
+        "showAnalogSeconds": true,
+        "displayPreferences": [
+          "all"
+        ],
+        "showOnOverlay": false
+      },
+      "positions": {
+        "HDMI-A-1": {
+          "width": 200,
+          "height": 200,
+          "x": 40,
+          "y": 80
+        }
+      }
     }
   ],
   "desktopWidgetGroups": [
@@ -982,9 +1011,9 @@
   "launcherPluginOrder": [],
   "frameEnabled": true,
   "frameThickness": 8,
-  "frameRounding": 18,
-  "frameColor": "",
-  "frameOpacity": 0.8,
+  "frameRounding": 15,
+  "frameColor": "surface",
+  "frameOpacity": 0.41,
   "frameScreenPreferences": [
     "all"
   ],
