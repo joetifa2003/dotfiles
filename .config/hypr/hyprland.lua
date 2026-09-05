@@ -22,7 +22,7 @@ if hl.plugin.hyprglass then
 	})
 
 	hg.layer("quickshell:bezel", { preset = "ui", mask_threshold = 0.3 })
-	hg.layer("dms:frame", { preset = "blur", mask_threshold = 0.05 })
+	hg.layer("dms:frame", { preset = "blur-bar", mask_threshold = 0.05 })
 	hg.layer("dms:desktop-widget:cavaVisualizer:dw_1773869062763_8aq9tx0qi", { preset = "blur", mask_threshold = 0.05 })
 	hg.layer(
 		"dms:desktop-widget:dankDesktopWeather:dw_1767021939979_zuighiujh",
@@ -38,16 +38,10 @@ if hl.plugin.hyprglass then
 		fresnel_strength = 0.8,
 	})
 
-	hg.preset("clear", {
-		glass_opacity = 0.8,
-		blur_strength = 1,
-		dark = { brightness = 0.5 },
-	})
-
-	hg.preset("contrasted", {
-		inherits = "high_contrast",
-		contrast = 1.2,
-		adaptive_dim = 1.5,
-		dark = { tint_color = 0x02142aa9 },
+	hg.preset("blur-bar", {
+		inherits = "glass",
+		chromatic_aberration = 0.4,
+		refraction_strength = 1,
+		fresnel_strength = 0.2,
 	})
 end
