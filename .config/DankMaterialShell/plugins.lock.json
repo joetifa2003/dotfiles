@@ -1,0 +1,44 @@
+{
+  "lockfileVersion": 1,
+  "plugins": {
+    "appShortcut": {
+      "repo": "https://github.com/oabragh/AppShortcut",
+      "commit": "373400a84e40b0fb73d6c809ea33c425b529c35f"
+    },
+    "calculator": {
+      "repo": "https://github.com/rochacbruno/DankCalculator",
+      "commit": "1db5865419a40a33171a475855a59e0b8bf7187f"
+    },
+    "cavaVisualizer": {
+      "repo": "https://github.com/ernestowgg/cava-visualizer",
+      "commit": "2d08bef95bc7cd170ad5730a27791c9af6d80a52"
+    },
+    "dankDesktopWeather": {
+      "repo": "https://github.com/AvengeMedia/dms-plugins",
+      "path": "DankDesktopWeather",
+      "commit": "6fc7f25bfb24f93b6488fb8a36ed67b5f242abdb"
+    },
+    "dankGifSearch": {
+      "repo": "https://github.com/AvengeMedia/dms-plugins",
+      "path": "DankGifSearch",
+      "commit": "6fc7f25bfb24f93b6488fb8a36ed67b5f242abdb"
+    },
+    "dankHyprlandWindows": {
+      "repo": "https://github.com/AvengeMedia/dms-plugins",
+      "path": "DankHyprlandWindows",
+      "commit": "6fc7f25bfb24f93b6488fb8a36ed67b5f242abdb"
+    },
+    "emojiLauncher": {
+      "repo": "https://github.com/devnullvoid/dms-emoji-launcher",
+      "commit": "8ff394e3ddfcb2fd755ed2e7b4c6f01f3e26e596"
+    },
+    "materialWeather": {
+      "repo": "https://github.com/notsopreety/materialWeather",
+      "commit": "06d047c1f98c8f8248a440415eb9ff1d5fe1f49a"
+    },
+    "webSearch": {
+      "repo": "https://github.com/devnullvoid/dms-web-search",
+      "commit": "821f5b437ea96739ce1cbc85ce324fb55e8884bb"
+    }
+  }
+}

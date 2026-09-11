@@ -24,5 +24,8 @@
   },
   "dankGifSearch": {
     "enabled": true
+  },
+  "materialPlayer": {
+    "enabled": true
   }
 }

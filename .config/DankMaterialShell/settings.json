@@ -129,7 +129,6 @@
     }
   ],
   "osdAlwaysShowValue": true,
-  "osdPosition": 7,
   "osdMediaPlaybackEnabled": true,
   "osdPowerProfileEnabled": true,
   "screenPreferences": {
@@ -147,6 +146,7 @@
     "default": {
       "shadowIntensity": 0,
       "squareCorners": true,
+      "attachToScreenEdge": false,
       "gothCornersEnabled": true,
       "borderEnabled": false
     }
@@ -256,7 +256,11 @@
       "maximizeDetection": true,
       "shadowIntensity": 0,
       "shadowColorMode": "primary",
-      "shadowOpacity": 45
+      "shadowOpacity": 45,
+      "islandFloating": false,
+      "islandUseOverlayLayer": false,
+      "islandHomeCompactTight": true,
+      "hoverPopouts": false
     }
   ],
   "desktopClockCustomColor": {
@@ -293,7 +297,7 @@
       "enabled": true,
       "config": {
         "showHeader": true,
-        "transparency": 0.5,
+        "transparency": 0.81,
         "colorMode": "primary",
         "customColor": "#ffffff",
         "showCpu": true,
@@ -303,13 +307,13 @@
         "gpuPciId": "10de:24dd",
         "showMemory": true,
         "showMemoryGraph": true,
-        "showNetwork": true,
+        "showNetwork": false,
         "showNetworkGraph": true,
         "showDisk": true,
-        "showTopProcesses": true,
-        "topProcessCount": 5,
+        "showTopProcesses": false,
+        "topProcessCount": 3,
         "topProcessSortBy": "cpu",
-        "layoutMode": "auto",
+        "layoutMode": "grid",
         "graphInterval": 60,
         "displayPreferences": [
           "all"
@@ -327,8 +331,19 @@
           "all"
         ],
         "showOnOverlay": false,
-        "viewMode": "standard",
-        "backgroundOpacity": 50
+        "viewMode": "compact",
+        "backgroundOpacity": 80,
+        "colorMode": "primary",
+        "showPressure": false,
+        "showLocation": true,
+        "showCondition": true,
+        "showHumidity": true,
+        "showWind": true,
+        "showPrecipitation": true,
+        "showSunTimes": true,
+        "showForecast": true,
+        "showHourlyForecast": false,
+        "hourlyCount": 6
       }
     },
     {
@@ -370,6 +385,23 @@
         ],
         "showOnOverlay": false
       }
+    },
+    {
+      "id": "dw_1788590518258_wmikpqapb",
+      "widgetType": "materialWeather",
+      "name": "Material Weather",
+      "enabled": true,
+      "config": {
+        "displayPreferences": [
+          "all"
+        ],
+        "shapeMode": "pebble",
+        "colorMode": "primary",
+        "cookieOpacity": 82,
+        "backgroundOpacity": 80,
+        "showOnOverlay": false,
+        "clickThrough": false
+      }
     }
   ],
   "desktopWidgetGroups": [
@@ -388,7 +420,7 @@
   "frameThickness": 8,
   "frameRounding": 15,
   "frameColor": "surface",
-  "frameOpacity": 0.41,
+  "frameOpacity": 0.6,
   "frameCloseGaps": false,
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,

@@ -22,13 +22,13 @@ if hl.plugin.hyprglass then
 	})
 
 	hg.layer("quickshell:bezel", { preset = "ui", mask_threshold = 0.3 })
-	hg.layer("dms:frame", { preset = "blur-bar", mask_threshold = 0.05 })
-	hg.layer("dms:desktop-widget:cavaVisualizer:dw_1773869062763_8aq9tx0qi", { preset = "blur", mask_threshold = 0.05 })
-	hg.layer(
-		"dms:desktop-widget:dankDesktopWeather:dw_1767021939979_zuighiujh",
-		{ preset = "blur", mask_threshold = 0.05 }
-	)
-	hg.layer("dms:desktop-widget:systemMonitor:dw_1766801420917_olchhodp0", { preset = "blur", mask_threshold = 0.05 })
+	-- hg.layer("dms:frame", { preset = "blur-bar", mask_threshold = 0.05 })
+	-- hg.layer("dms:desktop-widget:cavaVisualizer:dw_1773869062763_8aq9tx0qi", { preset = "blur", mask_threshold = 0.05 })
+	-- hg.layer(
+	-- 	"dms:desktop-widget:dankDesktopWeather:dw_1767021939979_zuighiujh",
+	-- 	{ preset = "blur", mask_threshold = 0.05 }
+	-- )
+	-- hg.layer("dms:desktop-widget:systemMonitor:dw_1766801420917_olchhodp0", { preset = "blur", mask_threshold = 0.05 })
 
 	-- Presets
 	hg.preset("blur", {
