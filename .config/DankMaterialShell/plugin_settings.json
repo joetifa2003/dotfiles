@@ -1,6 +1,7 @@
 {
   "emojiLauncher": {
-    "enabled": true
+    "enabled": true,
+    "recentEmojis": "🟢"
   },
   "calculator": {
     "enabled": true,
@@ -27,5 +28,14 @@
   },
   "materialPlayer": {
     "enabled": true
+  },
+  "wallpaperCarousel": {
+    "enabled": true,
+    "overlayOpacity": 80,
+    "borderWidth": 0,
+    "itemWidth": 400,
+    "itemHeight": 403,
+    "selectedScale": 119,
+    "expandSelected": "true"
   }
 }

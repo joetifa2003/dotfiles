@@ -21,11 +21,11 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 8,
+		rounding = 0,
 		active_opacity = 1.0,
 		inactive_opacity = 0.9,
 		shadow = {
-			enabled = true,
+			enabled = false,
 			range = 8,
 			render_power = 3,
 			color = "rgba(1a1a1aee)",

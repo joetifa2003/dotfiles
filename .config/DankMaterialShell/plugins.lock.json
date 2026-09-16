@@ -36,6 +36,10 @@
       "repo": "https://github.com/notsopreety/materialWeather",
       "commit": "06d047c1f98c8f8248a440415eb9ff1d5fe1f49a"
     },
+    "wallpaperCarousel": {
+      "repo": "https://github.com/motor-dev/wallpaperCarousel",
+      "commit": "761ecd1b7f347beee9f17909f8334d987c935a1a"
+    },
     "webSearch": {
       "repo": "https://github.com/devnullvoid/dms-web-search",
       "commit": "821f5b437ea96739ce1cbc85ce324fb55e8884bb"

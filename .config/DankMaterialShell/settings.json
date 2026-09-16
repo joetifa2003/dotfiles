@@ -6,6 +6,7 @@
   "popoutAnimationSpeed": 0,
   "modalAnimationSpeed": 0,
   "animationVariant": 1,
+  "m3ElevationEnabled": false,
   "blurEnabled": true,
   "controlCenterShowMicIcon": true,
   "controlCenterWidgets": [
@@ -117,7 +118,10 @@
   "matugenTemplateAlacritty": false,
   "matugenTemplateWezterm": false,
   "matugenTemplateVscode": false,
+  "notificationForegroundLayers": false,
   "maxFprintTries": 3,
+  "notificationCompactMode": true,
+  "notificationShowTimeoutBar": true,
   "notificationRules": [
     {
       "enabled": true,
@@ -251,7 +255,7 @@
       "popupGapsManual": 4,
       "widgetOutlineEnabled": false,
       "widgetOutlineColor": "primary",
-      "widgetOutlineOpacity": 0.14,
+      "widgetOutlineOpacity": 1,
       "widgetOutlineThickness": 3,
       "maximizeDetection": true,
       "shadowIntensity": 0,
@@ -260,7 +264,13 @@
       "islandFloating": false,
       "islandUseOverlayLayer": false,
       "islandHomeCompactTight": true,
-      "hoverPopouts": false
+      "hoverPopouts": false,
+      "attachToScreenEdge": false,
+      "maximizeWidgetText": false,
+      "removeWidgetPadding": false,
+      "maximizeWidgetIcons": false,
+      "iconScale": 1,
+      "batteryColorMode": "theme"
     }
   ],
   "desktopClockCustomColor": {
@@ -418,12 +428,11 @@
   },
   "frameEnabled": true,
   "frameThickness": 8,
-  "frameRounding": 15,
+  "frameRounding": 0,
   "frameColor": "surface",
-  "frameOpacity": 0.6,
+  "frameOpacity": 0.7,
   "frameCloseGaps": false,
   "frameLauncherEmergeSide": "top",
-  "frameLauncherArcExtender": true,
   "frameBarInsetPadding": 8,
   "configVersion": 18
 }
