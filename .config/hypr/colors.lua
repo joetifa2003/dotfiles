@@ -1,104 +1,104 @@
 return {
-  ["image"] = "/home/joetifa/wallpapers/wallhaven-qrgqyq.jpg",
+  ["image"] = "/home/joetifa/wallpapers/black-porsche-palms.jpeg",
 
-  ["background"] = "rgba(14140cff)",
+  ["background"] = "rgba(18120bff)",
 
   ["error"] = "rgba(ffb4abff)",
 
   ["error_container"] = "rgba(93000aff)",
 
-  ["inverse_on_surface"] = "rgba(313128ff)",
+  ["inverse_on_surface"] = "rgba(362f27ff)",
 
-  ["inverse_primary"] = "rgba(5f621aff)",
+  ["inverse_primary"] = "rgba(815511ff)",
 
-  ["inverse_surface"] = "rgba(e5e3d6ff)",
+  ["inverse_surface"] = "rgba(ede0d4ff)",
 
-  ["on_background"] = "rgba(e5e3d6ff)",
+  ["on_background"] = "rgba(ede0d4ff)",
 
   ["on_error"] = "rgba(690005ff)",
 
   ["on_error_container"] = "rgba(ffdad6ff)",
 
-  ["on_primary"] = "rgba(303300ff)",
+  ["on_primary"] = "rgba(462b00ff)",
 
-  ["on_primary_container"] = "rgba(e4e891ff)",
+  ["on_primary_container"] = "rgba(ffddb5ff)",
 
-  ["on_primary_fixed"] = "rgba(1c1d00ff)",
+  ["on_primary_fixed"] = "rgba(2a1800ff)",
 
-  ["on_primary_fixed_variant"] = "rgba(474a01ff)",
+  ["on_primary_fixed_variant"] = "rgba(643f00ff)",
 
-  ["on_secondary"] = "rgba(313219ff)",
+  ["on_secondary"] = "rgba(3e2d16ff)",
 
-  ["on_secondary_container"] = "rgba(e5e5c0ff)",
+  ["on_secondary_container"] = "rgba(fbdebcff)",
 
-  ["on_secondary_fixed"] = "rgba(1c1d06ff)",
+  ["on_secondary_fixed"] = "rgba(271905ff)",
 
-  ["on_secondary_fixed_variant"] = "rgba(47482dff)",
+  ["on_secondary_fixed_variant"] = "rgba(57432bff)",
 
-  ["on_surface"] = "rgba(e5e3d6ff)",
+  ["on_surface"] = "rgba(ede0d4ff)",
 
-  ["on_surface_variant"] = "rgba(c9c7b6ff)",
+  ["on_surface_variant"] = "rgba(d3c4b4ff)",
 
-  ["on_tertiary"] = "rgba(09372bff)",
+  ["on_tertiary"] = "rgba(263514ff)",
 
-  ["on_tertiary_container"] = "rgba(bfecdaff)",
+  ["on_tertiary_container"] = "rgba(d5eabaff)",
 
-  ["on_tertiary_fixed"] = "rgba(002118ff)",
+  ["on_tertiary_fixed"] = "rgba(111f03ff)",
 
-  ["on_tertiary_fixed_variant"] = "rgba(244e41ff)",
+  ["on_tertiary_fixed_variant"] = "rgba(3b4c29ff)",
 
-  ["outline"] = "rgba(929182ff)",
+  ["outline"] = "rgba(9c8e80ff)",
 
-  ["outline_variant"] = "rgba(48473bff)",
+  ["outline_variant"] = "rgba(4f4539ff)",
 
-  ["primary"] = "rgba(c8cc78ff)",
+  ["primary"] = "rgba(f6bc70ff)",
 
-  ["primary_container"] = "rgba(474a01ff)",
+  ["primary_container"] = "rgba(643f00ff)",
 
-  ["primary_fixed"] = "rgba(e4e891ff)",
+  ["primary_fixed"] = "rgba(ffddb5ff)",
 
-  ["primary_fixed_dim"] = "rgba(c8cc78ff)",
+  ["primary_fixed_dim"] = "rgba(f6bc70ff)",
 
   ["scrim"] = "rgba(000000ff)",
 
-  ["secondary"] = "rgba(c9c9a5ff)",
+  ["secondary"] = "rgba(dec2a2ff)",
 
-  ["secondary_container"] = "rgba(47482dff)",
+  ["secondary_container"] = "rgba(57432bff)",
 
-  ["secondary_fixed"] = "rgba(e5e5c0ff)",
+  ["secondary_fixed"] = "rgba(fbdebcff)",
 
-  ["secondary_fixed_dim"] = "rgba(c9c9a5ff)",
+  ["secondary_fixed_dim"] = "rgba(dec2a2ff)",
 
   ["shadow"] = "rgba(000000ff)",
 
-  ["source_color"] = "rgba(1b1b14ff)",
+  ["source_color"] = "rgba(d9b07dff)",
 
-  ["surface"] = "rgba(14140cff)",
+  ["surface"] = "rgba(18120bff)",
 
-  ["surface_bright"] = "rgba(3a3a31ff)",
+  ["surface_bright"] = "rgba(3f3830ff)",
 
-  ["surface_container"] = "rgba(202018ff)",
+  ["surface_container"] = "rgba(251f17ff)",
 
-  ["surface_container_high"] = "rgba(2b2a22ff)",
+  ["surface_container_high"] = "rgba(302921ff)",
 
-  ["surface_container_highest"] = "rgba(35352cff)",
+  ["surface_container_highest"] = "rgba(3b342bff)",
 
-  ["surface_container_low"] = "rgba(1c1c14ff)",
+  ["surface_container_low"] = "rgba(211b13ff)",
 
-  ["surface_container_lowest"] = "rgba(0e0f08ff)",
+  ["surface_container_lowest"] = "rgba(130d07ff)",
 
-  ["surface_dim"] = "rgba(14140cff)",
+  ["surface_dim"] = "rgba(18120bff)",
 
-  ["surface_tint"] = "rgba(c8cc78ff)",
+  ["surface_tint"] = "rgba(f6bc70ff)",
 
-  ["surface_variant"] = "rgba(48473bff)",
+  ["surface_variant"] = "rgba(4f4539ff)",
 
-  ["tertiary"] = "rgba(a3d0bfff)",
+  ["tertiary"] = "rgba(bacda0ff)",
 
-  ["tertiary_container"] = "rgba(244e41ff)",
+  ["tertiary_container"] = "rgba(3b4c29ff)",
 
-  ["tertiary_fixed"] = "rgba(bfecdaff)",
+  ["tertiary_fixed"] = "rgba(d5eabaff)",
 
-  ["tertiary_fixed_dim"] = "rgba(a3d0bfff)",
+  ["tertiary_fixed_dim"] = "rgba(bacda0ff)",
 
 }
